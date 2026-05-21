@@ -1,9 +1,9 @@
 //  @ts-check
 
-import { tanstackConfig } from '@tanstack/eslint-config'
+import { config } from '@repo/eslint-config/react-internal'
 
 export default [
-  ...tanstackConfig,
+  ...config,
   {
     rules: {
       'import/no-cycle': 'off',
@@ -11,7 +11,6 @@ export default [
       'sort-imports': 'off',
       '@typescript-eslint/array-type': 'off',
       '@typescript-eslint/require-await': 'off',
-      'pnpm/json-enforce-catalog': 'off',
     },
   },
   {

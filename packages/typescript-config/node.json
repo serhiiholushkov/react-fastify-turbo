@@ -3,6 +3,7 @@
   "extends": "./base.json",
   "compilerOptions": {
     "lib": ["es2022"],
-    "declaration": false
+    "declaration": false,
+    "declarationMap": false
   }
 }
