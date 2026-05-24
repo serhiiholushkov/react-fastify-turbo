@@ -6,6 +6,7 @@ import {
 import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools'
 import { TanStackDevtools } from '@tanstack/react-devtools'
 
+import { ErrorBoundary } from '../components/error-boundary'
 import ClerkProvider from '../integrations/clerk/provider'
 
 import TanStackQueryDevtools from '../integrations/tanstack-query/devtools'
@@ -40,6 +41,7 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
     ],
   }),
   shellComponent: RootDocument,
+  errorComponent: ErrorBoundary,
 })
 
 function RootDocument({ children }: { children: React.ReactNode }) {
