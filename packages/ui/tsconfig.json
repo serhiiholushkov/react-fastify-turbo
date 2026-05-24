@@ -9,6 +9,21 @@
     "paths": {
       "@/*": [
         "./src/*"
+      ],
+      "@repo/ui": [
+        "./src/index.ts"
+      ],
+      "@repo/ui/components": [
+        "./src/components"
+      ],
+      "@repo/ui/components/*": [
+        "./src/components/*"
+      ],
+      "@repo/ui/lib/*": [
+        "./src/lib/*"
+      ],
+      "@repo/ui/hooks/*": [
+        "./src/hooks/*"
       ]
     }
   },
