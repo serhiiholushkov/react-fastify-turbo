@@ -10,7 +10,7 @@
     "check-types": "turbo run check-types"
   },
   "devDependencies": {
-    "prettier": "^3.8.3",
+    "prettier": "catalog:",
     "turbo": "latest"
   },
   "keywords": [],

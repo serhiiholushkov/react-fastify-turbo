@@ -20,9 +20,9 @@
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
-    "@types/node": "^22.10.2",
-    "eslint": "^9.20.0",
+    "@types/node": "catalog:",
+    "eslint": "catalog:",
     "tsx": "^4.19.4",
-    "typescript": "^5.8.3"
+    "typescript": "catalog:"
   }
 }
