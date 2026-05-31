@@ -22,6 +22,21 @@ export const getTasks = createServerFn({
   return JSON.parse(tasksData) as TasksData
 })
 
+export const getFormOptions = createServerFn({
+  method: 'GET',
+}).handler(async () => {
+  const [prioritiesRaw, projectsRaw, assigneesRaw] = await Promise.all([
+    fs.promises.readFile(PRIORITIES_FILE_PATH, 'utf-8'),
+    fs.promises.readFile(PROJECTS_FILE_PATH, 'utf-8'),
+    fs.promises.readFile(ASSIGNEES_FILE_PATH, 'utf-8'),
+  ])
+  return {
+    priorities: JSON.parse(prioritiesRaw) as Priority[],
+    projects: JSON.parse(projectsRaw) as Project[],
+    assignees: JSON.parse(assigneesRaw) as Assignee[],
+  }
+})
+
 export const createTask = createServerFn({
   method: 'POST',
 })

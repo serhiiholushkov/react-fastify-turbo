@@ -783,5 +783,37 @@
     "title": "Create data table component",
     "description": "Build a reusable DataTable component on top of TanStack Table with sorting, filtering, and pagination built in.",
     "createdAt": "2026-05-09T13:00:00.000Z"
+  },
+  {
+    "id": 26,
+    "slug": "CORE-26",
+    "project": {
+      "id": 1,
+      "slug": "core",
+      "key": "CORE",
+      "name": "Core Platform",
+      "description": "Monorepo infrastructure, build pipeline, API server, and shared tooling."
+    },
+    "status": {
+      "id": 1,
+      "name": "Backlog",
+      "slug": "backlog",
+      "color": "#94a3b8"
+    },
+    "priority": {
+      "id": 2,
+      "slug": "urgent",
+      "name": "Urgent",
+      "order": 1
+    },
+    "assignee": {
+      "id": 3,
+      "slug": "zaranightshard",
+      "name": "Zara Nightshard",
+      "email": "zara.nightshard@example.com"
+    },
+    "title": "Create test 1",
+    "description": "This is the first create task test",
+    "createdAt": "2026-05-31T23:48:34.021Z"
   }
 ]

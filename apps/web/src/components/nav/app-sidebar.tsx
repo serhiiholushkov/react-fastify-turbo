@@ -1,11 +1,14 @@
 import type { LucideIcon } from 'lucide-react'
-import { Link } from '@tanstack/react-router'
+import { SquarePenIcon } from 'lucide-react'
+import { Link, useRouterState } from '@tanstack/react-router'
 import {
   Sidebar,
   SidebarContent,
   SidebarFooter,
   SidebarGroup,
+  SidebarGroupAction,
   SidebarGroupContent,
+  SidebarGroupLabel,
   SidebarHeader,
   SidebarMenu,
   SidebarMenuButton,
@@ -23,11 +26,23 @@ type Props = {
 }
 
 export const AppSidebar = ({ navItems }: Props) => {
+  const pathname = useRouterState({ select: (s) => s.location.pathname })
+  const isTasksRoute = pathname === '/tasks' || pathname.startsWith('/tasks')
+
   return (
     <Sidebar>
       <SidebarHeader />
       <SidebarContent>
         <SidebarGroup>
+          <SidebarGroupLabel>Navigation</SidebarGroupLabel>
+          {isTasksRoute && (
+            <SidebarGroupAction asChild title="Create new task">
+              <Link to="/tasks" search={{ createTask: true }}>
+                <SquarePenIcon />
+                <span className="sr-only">Create new task</span>
+              </Link>
+            </SidebarGroupAction>
+          )}
           <SidebarGroupContent>
             <SidebarMenu>
               {navItems.map((item) => (
