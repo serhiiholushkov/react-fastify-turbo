@@ -1,6 +1,6 @@
-import globals from 'globals';
-import tseslint from 'typescript-eslint';
-import { config as baseConfig } from './base.js';
+import globals from "globals";
+import tseslint from "typescript-eslint";
+import { config as baseConfig } from "./base.js";
 
 /** @type {import("typescript-eslint").Config} */
 export default tseslint.config(...baseConfig, {
@@ -10,7 +10,7 @@ export default tseslint.config(...baseConfig, {
     },
   },
   rules: {
-    '@typescript-eslint/no-floating-promises': 'error', // critical for async Fastify handlers
-    '@typescript-eslint/no-unsafe-argument': 'warn',
+    "@typescript-eslint/no-floating-promises": "error", // critical for async Fastify handlers
+    "@typescript-eslint/no-unsafe-argument": "warn",
   },
 });

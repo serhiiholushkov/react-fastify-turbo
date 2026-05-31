@@ -1,5 +1,6 @@
 import {
   HeadContent,
+  Outlet,
   Scripts,
   createRootRouteWithContext,
 } from '@tanstack/react-router'
@@ -7,6 +8,7 @@ import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools'
 import { TanStackDevtools } from '@tanstack/react-devtools'
 
 import { ErrorBoundary } from '../components/error-boundary'
+import { MainLayout } from '../components/layout/main-layout'
 import ClerkProvider from '../integrations/clerk/provider'
 
 import TanStackQueryDevtools from '../integrations/tanstack-query/devtools'
@@ -41,6 +43,11 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
     ],
   }),
   shellComponent: RootDocument,
+  component: () => (
+    <MainLayout>
+      <Outlet />
+    </MainLayout>
+  ),
   errorComponent: ErrorBoundary,
 })
 
