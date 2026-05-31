@@ -1,0 +1,787 @@
+[
+  {
+    "id": 1,
+    "slug": "CORE-1",
+    "project": {
+      "id": 1,
+      "slug": "core",
+      "key": "CORE",
+      "name": "Core Platform",
+      "description": "Monorepo infrastructure, build pipeline, API server, and shared tooling."
+    },
+    "status": {
+      "id": 3,
+      "name": "In Progress",
+      "slug": "in-progress",
+      "color": "#3b82f6"
+    },
+    "priority": {
+      "id": 2,
+      "slug": "urgent",
+      "name": "Urgent",
+      "order": 1
+    },
+    "assignee": {
+      "id": 1,
+      "slug": "ariastormweave",
+      "name": "Aria Stormweave",
+      "email": "aria.stormweave@example.com"
+    },
+    "title": "Set up Turborepo monorepo workspace",
+    "description": "Initialize the monorepo with pnpm workspaces and Turborepo. Define the pipeline for build, dev, and lint tasks across all packages.",
+    "createdAt": "2026-05-01T09:00:00.000Z"
+  },
+  {
+    "id": 2,
+    "slug": "CORE-2",
+    "project": {
+      "id": 1,
+      "slug": "core",
+      "key": "CORE",
+      "name": "Core Platform",
+      "description": "Monorepo infrastructure, build pipeline, API server, and shared tooling."
+    },
+    "status": {
+      "id": 3,
+      "name": "In Progress",
+      "slug": "in-progress",
+      "color": "#3b82f6"
+    },
+    "priority": {
+      "id": 3,
+      "slug": "high",
+      "name": "High",
+      "order": 2
+    },
+    "assignee": {
+      "id": 2,
+      "slug": "kaeldawnbringer",
+      "name": "Kael Dawnbringer",
+      "email": "kael.dawnbringer@example.com"
+    },
+    "title": "Configure Fastify server with TypeScript",
+    "description": "Bootstrap the Fastify app inside apps/api with full TypeScript support, tsconfig path aliases, and a working dev server via tsx.",
+    "createdAt": "2026-05-02T10:30:00.000Z"
+  },
+  {
+    "id": 3,
+    "slug": "CORE-3",
+    "project": {
+      "id": 1,
+      "slug": "core",
+      "key": "CORE",
+      "name": "Core Platform",
+      "description": "Monorepo infrastructure, build pipeline, API server, and shared tooling."
+    },
+    "status": {
+      "id": 3,
+      "name": "In Progress",
+      "slug": "in-progress",
+      "color": "#3b82f6"
+    },
+    "priority": {
+      "id": 3,
+      "slug": "high",
+      "name": "High",
+      "order": 2
+    },
+    "assignee": {
+      "id": 3,
+      "slug": "zaranightshard",
+      "name": "Zara Nightshard",
+      "email": "zara.nightshard@example.com"
+    },
+    "title": "Integrate TanStack Query with React",
+    "description": "Set up QueryClient and QueryClientProvider in the React app. Add TanStack Query Devtools for development builds.",
+    "createdAt": "2026-05-03T08:15:00.000Z"
+  },
+  {
+    "id": 4,
+    "slug": "CORE-4",
+    "project": {
+      "id": 1,
+      "slug": "core",
+      "key": "CORE",
+      "name": "Core Platform",
+      "description": "Monorepo infrastructure, build pipeline, API server, and shared tooling."
+    },
+    "status": {
+      "id": 4,
+      "name": "In Review",
+      "slug": "in-review",
+      "color": "#a855f7"
+    },
+    "priority": {
+      "id": 3,
+      "slug": "high",
+      "name": "High",
+      "order": 2
+    },
+    "assignee": {
+      "id": 1,
+      "slug": "ariastormweave",
+      "name": "Aria Stormweave",
+      "email": "aria.stormweave@example.com"
+    },
+    "title": "Add shared ESLint config package",
+    "description": "Create the packages/eslint-config package with base, node, and react-internal presets. Wire it up to all apps and packages.",
+    "createdAt": "2026-05-04T11:00:00.000Z"
+  },
+  {
+    "id": 5,
+    "slug": "CORE-5",
+    "project": {
+      "id": 1,
+      "slug": "core",
+      "key": "CORE",
+      "name": "Core Platform",
+      "description": "Monorepo infrastructure, build pipeline, API server, and shared tooling."
+    },
+    "status": {
+      "id": 4,
+      "name": "In Review",
+      "slug": "in-review",
+      "color": "#a855f7"
+    },
+    "priority": {
+      "id": 3,
+      "slug": "high",
+      "name": "High",
+      "order": 2
+    },
+    "assignee": {
+      "id": 3,
+      "slug": "zaranightshard",
+      "name": "Zara Nightshard",
+      "email": "zara.nightshard@example.com"
+    },
+    "title": "Configure pnpm workspace dependencies",
+    "description": "Audit pnpm-workspace.yaml and package.json files to ensure internal packages are correctly referenced with workspace: protocol.",
+    "createdAt": "2026-05-04T14:00:00.000Z"
+  },
+  {
+    "id": 6,
+    "slug": "CORE-6",
+    "project": {
+      "id": 1,
+      "slug": "core",
+      "key": "CORE",
+      "name": "Core Platform",
+      "description": "Monorepo infrastructure, build pipeline, API server, and shared tooling."
+    },
+    "status": {
+      "id": 5,
+      "name": "Paused",
+      "slug": "paused",
+      "color": "#f59e0b"
+    },
+    "priority": {
+      "id": 2,
+      "slug": "urgent",
+      "name": "Urgent",
+      "order": 1
+    },
+    "assignee": {
+      "id": 4,
+      "slug": "theronashveil",
+      "name": "Theron Ashveil",
+      "email": "theron.ashveil@example.com"
+    },
+    "title": "Implement API route validation with Zod",
+    "description": "Add Zod schemas for all Fastify route inputs and outputs. Use fastify-type-provider-zod to wire schemas into the route definitions.",
+    "createdAt": "2026-05-05T09:45:00.000Z"
+  },
+  {
+    "id": 7,
+    "slug": "CORE-7",
+    "project": {
+      "id": 1,
+      "slug": "core",
+      "key": "CORE",
+      "name": "Core Platform",
+      "description": "Monorepo infrastructure, build pipeline, API server, and shared tooling."
+    },
+    "status": {
+      "id": 5,
+      "name": "Paused",
+      "slug": "paused",
+      "color": "#f59e0b"
+    },
+    "priority": {
+      "id": 3,
+      "slug": "high",
+      "name": "High",
+      "order": 2
+    },
+    "assignee": {
+      "id": 1,
+      "slug": "ariastormweave",
+      "name": "Aria Stormweave",
+      "email": "aria.stormweave@example.com"
+    },
+    "title": "Set up database connection layer",
+    "description": "Evaluate and configure a database client (Drizzle or Prisma) with connection pooling. Add a health-check route that pings the DB.",
+    "createdAt": "2026-05-06T10:00:00.000Z"
+  },
+  {
+    "id": 8,
+    "slug": "CORE-8",
+    "project": {
+      "id": 1,
+      "slug": "core",
+      "key": "CORE",
+      "name": "Core Platform",
+      "description": "Monorepo infrastructure, build pipeline, API server, and shared tooling."
+    },
+    "status": {
+      "id": 6,
+      "name": "Done",
+      "slug": "done",
+      "color": "#22c55e"
+    },
+    "priority": {
+      "id": 2,
+      "slug": "urgent",
+      "name": "Urgent",
+      "order": 1
+    },
+    "assignee": {
+      "id": 3,
+      "slug": "zaranightshard",
+      "name": "Zara Nightshard",
+      "email": "zara.nightshard@example.com"
+    },
+    "title": "Initialize Vite + React project",
+    "description": "Scaffold the web app using Vite with the React + TypeScript template. Set output directory and base URL for production builds.",
+    "createdAt": "2026-04-28T08:00:00.000Z"
+  },
+  {
+    "id": 9,
+    "slug": "CORE-9",
+    "project": {
+      "id": 1,
+      "slug": "core",
+      "key": "CORE",
+      "name": "Core Platform",
+      "description": "Monorepo infrastructure, build pipeline, API server, and shared tooling."
+    },
+    "status": {
+      "id": 6,
+      "name": "Done",
+      "slug": "done",
+      "color": "#22c55e"
+    },
+    "priority": {
+      "id": 3,
+      "slug": "high",
+      "name": "High",
+      "order": 2
+    },
+    "assignee": {
+      "id": 1,
+      "slug": "ariastormweave",
+      "name": "Aria Stormweave",
+      "email": "aria.stormweave@example.com"
+    },
+    "title": "Configure TypeScript strict mode",
+    "description": "Enable strict: true in all tsconfig.json files. Fix resulting type errors across the codebase.",
+    "createdAt": "2026-04-29T09:30:00.000Z"
+  },
+  {
+    "id": 10,
+    "slug": "CORE-10",
+    "project": {
+      "id": 1,
+      "slug": "core",
+      "key": "CORE",
+      "name": "Core Platform",
+      "description": "Monorepo infrastructure, build pipeline, API server, and shared tooling."
+    },
+    "status": {
+      "id": 6,
+      "name": "Done",
+      "slug": "done",
+      "color": "#22c55e"
+    },
+    "priority": {
+      "id": 4,
+      "slug": "medium",
+      "name": "Medium",
+      "order": 3
+    },
+    "assignee": {
+      "id": 4,
+      "slug": "theronashveil",
+      "name": "Theron Ashveil",
+      "email": "theron.ashveil@example.com"
+    },
+    "title": "Set up turbo.json pipeline",
+    "description": "Define build, dev, lint, and format tasks in turbo.json with correct dependency ordering and caching configuration.",
+    "createdAt": "2026-04-30T10:00:00.000Z"
+  },
+  {
+    "id": 11,
+    "slug": "CORE-11",
+    "project": {
+      "id": 1,
+      "slug": "core",
+      "key": "CORE",
+      "name": "Core Platform",
+      "description": "Monorepo infrastructure, build pipeline, API server, and shared tooling."
+    },
+    "status": {
+      "id": 6,
+      "name": "Done",
+      "slug": "done",
+      "color": "#22c55e"
+    },
+    "priority": {
+      "id": 1,
+      "slug": "no-priority",
+      "name": "No Priority",
+      "order": 0
+    },
+    "assignee": {
+      "id": 2,
+      "slug": "kaeldawnbringer",
+      "name": "Kael Dawnbringer",
+      "email": "kael.dawnbringer@example.com"
+    },
+    "title": "Add Prettier configuration",
+    "description": "Add a root prettier.config.js with consistent formatting rules. Integrate with ESLint via eslint-config-prettier.",
+    "createdAt": "2026-04-30T14:30:00.000Z"
+  },
+  {
+    "id": 12,
+    "slug": "CORE-12",
+    "project": {
+      "id": 1,
+      "slug": "core",
+      "key": "CORE",
+      "name": "Core Platform",
+      "description": "Monorepo infrastructure, build pipeline, API server, and shared tooling."
+    },
+    "status": {
+      "id": 2,
+      "name": "Todo",
+      "slug": "todo",
+      "color": "#64748b"
+    },
+    "priority": {
+      "id": 4,
+      "slug": "medium",
+      "name": "Medium",
+      "order": 3
+    },
+    "assignee": {
+      "id": 1,
+      "slug": "ariastormweave",
+      "name": "Aria Stormweave",
+      "email": "aria.stormweave@example.com"
+    },
+    "title": "Set up end-to-end tests with Playwright",
+    "description": "Install Playwright, configure the test runner, and write a smoke test covering the main navigation routes.",
+    "createdAt": "2026-05-07T09:00:00.000Z"
+  },
+  {
+    "id": 13,
+    "slug": "CORE-13",
+    "project": {
+      "id": 1,
+      "slug": "core",
+      "key": "CORE",
+      "name": "Core Platform",
+      "description": "Monorepo infrastructure, build pipeline, API server, and shared tooling."
+    },
+    "status": {
+      "id": 1,
+      "name": "Backlog",
+      "slug": "backlog",
+      "color": "#94a3b8"
+    },
+    "priority": {
+      "id": 5,
+      "slug": "low",
+      "name": "Low",
+      "order": 4
+    },
+    "assignee": null,
+    "title": "Integrate OpenAPI spec generation",
+    "description": "Use @fastify/swagger and @fastify/swagger-ui to auto-generate and serve an OpenAPI 3 spec from the existing route schemas.",
+    "createdAt": "2026-05-08T11:00:00.000Z"
+  },
+  {
+    "id": 14,
+    "slug": "CORE-14",
+    "project": {
+      "id": 1,
+      "slug": "core",
+      "key": "CORE",
+      "name": "Core Platform",
+      "description": "Monorepo infrastructure, build pipeline, API server, and shared tooling."
+    },
+    "status": {
+      "id": 1,
+      "name": "Backlog",
+      "slug": "backlog",
+      "color": "#94a3b8"
+    },
+    "priority": {
+      "id": 5,
+      "slug": "low",
+      "name": "Low",
+      "order": 4
+    },
+    "assignee": {
+      "id": 4,
+      "slug": "theronashveil",
+      "name": "Theron Ashveil",
+      "email": "theron.ashveil@example.com"
+    },
+    "title": "Add structured logging with Pino",
+    "description": "Configure Pino as the Fastify logger with pretty-printing in development and JSON output in production.",
+    "createdAt": "2026-05-08T13:00:00.000Z"
+  },
+  {
+    "id": 15,
+    "slug": "AUTH-1",
+    "project": {
+      "id": 2,
+      "slug": "auth",
+      "key": "AUTH",
+      "name": "Authentication",
+      "description": "User identity, session management, and role-based access control via Clerk."
+    },
+    "status": {
+      "id": 3,
+      "name": "In Progress",
+      "slug": "in-progress",
+      "color": "#3b82f6"
+    },
+    "priority": {
+      "id": 4,
+      "slug": "medium",
+      "name": "Medium",
+      "order": 3
+    },
+    "assignee": {
+      "id": 4,
+      "slug": "theronashveil",
+      "name": "Theron Ashveil",
+      "email": "theron.ashveil@example.com"
+    },
+    "title": "Implement Clerk authentication provider",
+    "description": "Wrap the React app with ClerkProvider using the publishable key from environment variables. Gate protected routes with the auth middleware.",
+    "createdAt": "2026-05-05T10:00:00.000Z"
+  },
+  {
+    "id": 16,
+    "slug": "AUTH-2",
+    "project": {
+      "id": 2,
+      "slug": "auth",
+      "key": "AUTH",
+      "name": "Authentication",
+      "description": "User identity, session management, and role-based access control via Clerk."
+    },
+    "status": {
+      "id": 5,
+      "name": "Paused",
+      "slug": "paused",
+      "color": "#f59e0b"
+    },
+    "priority": {
+      "id": 2,
+      "slug": "urgent",
+      "name": "Urgent",
+      "order": 1
+    },
+    "assignee": null,
+    "title": "Add JWT token refresh logic",
+    "description": "Implement silent token refresh on the Fastify side using Clerk's backend SDK. Return 401 with a refresh hint when the token is near expiry.",
+    "createdAt": "2026-05-06T09:00:00.000Z"
+  },
+  {
+    "id": 17,
+    "slug": "AUTH-3",
+    "project": {
+      "id": 2,
+      "slug": "auth",
+      "key": "AUTH",
+      "name": "Authentication",
+      "description": "User identity, session management, and role-based access control via Clerk."
+    },
+    "status": {
+      "id": 6,
+      "name": "Done",
+      "slug": "done",
+      "color": "#22c55e"
+    },
+    "priority": {
+      "id": 5,
+      "slug": "low",
+      "name": "Low",
+      "order": 4
+    },
+    "assignee": {
+      "id": 1,
+      "slug": "ariastormweave",
+      "name": "Aria Stormweave",
+      "email": "aria.stormweave@example.com"
+    },
+    "title": "Install and configure Clerk SDK",
+    "description": "Add @clerk/clerk-react and @clerk/fastify to the workspace. Set up environment variable validation at app startup.",
+    "createdAt": "2026-04-29T11:00:00.000Z"
+  },
+  {
+    "id": 18,
+    "slug": "AUTH-4",
+    "project": {
+      "id": 2,
+      "slug": "auth",
+      "key": "AUTH",
+      "name": "Authentication",
+      "description": "User identity, session management, and role-based access control via Clerk."
+    },
+    "status": {
+      "id": 2,
+      "name": "Todo",
+      "slug": "todo",
+      "color": "#64748b"
+    },
+    "priority": {
+      "id": 5,
+      "slug": "low",
+      "name": "Low",
+      "order": 4
+    },
+    "assignee": {
+      "id": 2,
+      "slug": "kaeldawnbringer",
+      "name": "Kael Dawnbringer",
+      "email": "kael.dawnbringer@example.com"
+    },
+    "title": "Add user profile page",
+    "description": "Create a /profile route that renders Clerk's UserProfile component inside the app shell.",
+    "createdAt": "2026-05-07T12:00:00.000Z"
+  },
+  {
+    "id": 19,
+    "slug": "AUTH-5",
+    "project": {
+      "id": 2,
+      "slug": "auth",
+      "key": "AUTH",
+      "name": "Authentication",
+      "description": "User identity, session management, and role-based access control via Clerk."
+    },
+    "status": {
+      "id": 1,
+      "name": "Backlog",
+      "slug": "backlog",
+      "color": "#94a3b8"
+    },
+    "priority": {
+      "id": 4,
+      "slug": "medium",
+      "name": "Medium",
+      "order": 3
+    },
+    "assignee": null,
+    "title": "Implement role-based access control",
+    "description": "Define roles (admin, member, viewer) in Clerk organization metadata. Enforce them in Fastify route hooks and conditionally render UI elements.",
+    "createdAt": "2026-05-09T10:00:00.000Z"
+  },
+  {
+    "id": 20,
+    "slug": "UI-1",
+    "project": {
+      "id": 3,
+      "slug": "ui",
+      "key": "UI",
+      "name": "UI Components",
+      "description": "Shared React component library built on shadcn/ui and Tailwind CSS."
+    },
+    "status": {
+      "id": 4,
+      "name": "In Review",
+      "slug": "in-review",
+      "color": "#a855f7"
+    },
+    "priority": {
+      "id": 4,
+      "slug": "medium",
+      "name": "Medium",
+      "order": 3
+    },
+    "assignee": {
+      "id": 2,
+      "slug": "kaeldawnbringer",
+      "name": "Kael Dawnbringer",
+      "email": "kael.dawnbringer@example.com"
+    },
+    "title": "Set up shadcn/ui component library",
+    "description": "Run the shadcn/ui init wizard in the packages/ui package. Configure components.json, Tailwind, and CSS variables for theming.",
+    "createdAt": "2026-05-04T09:00:00.000Z"
+  },
+  {
+    "id": 21,
+    "slug": "UI-2",
+    "project": {
+      "id": 3,
+      "slug": "ui",
+      "key": "UI",
+      "name": "UI Components",
+      "description": "Shared React component library built on shadcn/ui and Tailwind CSS."
+    },
+    "status": {
+      "id": 5,
+      "name": "Paused",
+      "slug": "paused",
+      "color": "#f59e0b"
+    },
+    "priority": {
+      "id": 3,
+      "slug": "high",
+      "name": "High",
+      "order": 2
+    },
+    "assignee": {
+      "id": 2,
+      "slug": "kaeldawnbringer",
+      "name": "Kael Dawnbringer",
+      "email": "kael.dawnbringer@example.com"
+    },
+    "title": "Create base Button component",
+    "description": "Build the Button component using shadcn/ui primitives with variant support (default, destructive, outline, ghost, link) and size props.",
+    "createdAt": "2026-05-06T11:30:00.000Z"
+  },
+  {
+    "id": 22,
+    "slug": "UI-3",
+    "project": {
+      "id": 3,
+      "slug": "ui",
+      "key": "UI",
+      "name": "UI Components",
+      "description": "Shared React component library built on shadcn/ui and Tailwind CSS."
+    },
+    "status": {
+      "id": 6,
+      "name": "Done",
+      "slug": "done",
+      "color": "#22c55e"
+    },
+    "priority": {
+      "id": 4,
+      "slug": "medium",
+      "name": "Medium",
+      "order": 3
+    },
+    "assignee": {
+      "id": 2,
+      "slug": "kaeldawnbringer",
+      "name": "Kael Dawnbringer",
+      "email": "kael.dawnbringer@example.com"
+    },
+    "title": "Add Tailwind CSS configuration",
+    "description": "Install Tailwind CSS and configure tailwind.config.ts with content paths covering all packages. Set up the base CSS layer.",
+    "createdAt": "2026-04-30T08:30:00.000Z"
+  },
+  {
+    "id": 23,
+    "slug": "UI-4",
+    "project": {
+      "id": 3,
+      "slug": "ui",
+      "key": "UI",
+      "name": "UI Components",
+      "description": "Shared React component library built on shadcn/ui and Tailwind CSS."
+    },
+    "status": {
+      "id": 6,
+      "name": "Done",
+      "slug": "done",
+      "color": "#22c55e"
+    },
+    "priority": {
+      "id": 5,
+      "slug": "low",
+      "name": "Low",
+      "order": 4
+    },
+    "assignee": {
+      "id": 3,
+      "slug": "zaranightshard",
+      "name": "Zara Nightshard",
+      "email": "zara.nightshard@example.com"
+    },
+    "title": "Install and configure shadcn/ui",
+    "description": "Add shadcn/ui to the packages/ui workspace package and export all installed components via a barrel index.ts.",
+    "createdAt": "2026-04-30T16:00:00.000Z"
+  },
+  {
+    "id": 24,
+    "slug": "UI-5",
+    "project": {
+      "id": 3,
+      "slug": "ui",
+      "key": "UI",
+      "name": "UI Components",
+      "description": "Shared React component library built on shadcn/ui and Tailwind CSS."
+    },
+    "status": {
+      "id": 2,
+      "name": "Todo",
+      "slug": "todo",
+      "color": "#64748b"
+    },
+    "priority": {
+      "id": 4,
+      "slug": "medium",
+      "name": "Medium",
+      "order": 3
+    },
+    "assignee": {
+      "id": 4,
+      "slug": "theronashveil",
+      "name": "Theron Ashveil",
+      "email": "theron.ashveil@example.com"
+    },
+    "title": "Create Input component",
+    "description": "Add the shadcn/ui Input component to the shared UI package. Include a FormField wrapper with label and error message slots.",
+    "createdAt": "2026-05-07T14:00:00.000Z"
+  },
+  {
+    "id": 25,
+    "slug": "UI-6",
+    "project": {
+      "id": 3,
+      "slug": "ui",
+      "key": "UI",
+      "name": "UI Components",
+      "description": "Shared React component library built on shadcn/ui and Tailwind CSS."
+    },
+    "status": {
+      "id": 1,
+      "name": "Backlog",
+      "slug": "backlog",
+      "color": "#94a3b8"
+    },
+    "priority": {
+      "id": 1,
+      "slug": "no-priority",
+      "name": "No Priority",
+      "order": 0
+    },
+    "assignee": {
+      "id": 3,
+      "slug": "zaranightshard",
+      "name": "Zara Nightshard",
+      "email": "zara.nightshard@example.com"
+    },
+    "title": "Create data table component",
+    "description": "Build a reusable DataTable component on top of TanStack Table with sorting, filtering, and pagination built in.",
+    "createdAt": "2026-05-09T13:00:00.000Z"
+  }
+]

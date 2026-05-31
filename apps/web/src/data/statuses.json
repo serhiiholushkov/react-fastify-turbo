@@ -1,0 +1,8 @@
+[
+  { "id": 1, "name": "Backlog", "slug": "backlog", "color": "#94a3b8" },
+  { "id": 2, "name": "Todo", "slug": "todo", "color": "#64748b" },
+  { "id": 3, "name": "In Progress", "slug": "in-progress", "color": "#3b82f6" },
+  { "id": 4, "name": "In Review", "slug": "in-review", "color": "#a855f7" },
+  { "id": 5, "name": "Paused", "slug": "paused", "color": "#f59e0b" },
+  { "id": 6, "name": "Done", "slug": "done", "color": "#22c55e" }
+]

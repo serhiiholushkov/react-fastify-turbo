@@ -1,0 +1,7 @@
+[
+  { "id": 1, "slug": "no-priority", "name": "No Priority", "order": 0 },
+  { "id": 2, "slug": "urgent", "name": "Urgent", "order": 1 },
+  { "id": 3, "slug": "high", "name": "High", "order": 2 },
+  { "id": 4, "slug": "medium", "name": "Medium", "order": 3 },
+  { "id": 5, "slug": "low", "name": "Low", "order": 4 }
+]
