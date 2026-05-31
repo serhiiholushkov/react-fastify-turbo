@@ -1,7 +1,7 @@
-import { Assignee } from "./assignee.ts";
-import { Priority } from "./priority.ts";
-import { Project } from "./project.ts";
-import { Status } from "./status.ts";
+import type { Assignee } from "./assignee.ts";
+import type { Priority } from "./priority.ts";
+import type { Project } from "./project.ts";
+import type { Status } from "./status.ts";
 
 export interface Task {
   id: number;

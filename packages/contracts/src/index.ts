@@ -1,7 +1,11 @@
-import { Assignee } from "./assignee.ts";
-import { Priority } from "./priority.ts";
-import { Project } from "./project.ts";
-import { Status } from "./status.ts";
-import { Task } from "./task.ts";
+import type {
+  Assignee,
+  Priority,
+  Project,
+  Status,
+  Task,
+} from "./response/index.ts";
+import type { CreateTaskRequest } from "./request/index.ts";
 
 export type { Assignee, Priority, Project, Status, Task };
+export type { CreateTaskRequest };
