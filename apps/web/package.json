@@ -17,6 +17,7 @@
     "check": "prettier --check ."
   },
   "dependencies": {
+    "@repo/contracts": "workspace:*",
     "@repo/ui": "workspace:*",
     "@clerk/clerk-react": "^5.61.3",
     "@tailwindcss/vite": "^4.1.18",
