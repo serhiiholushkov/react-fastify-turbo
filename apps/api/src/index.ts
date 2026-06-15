@@ -1,10 +1,6 @@
-import fastify from "fastify";
+import { buildApp } from "./app.js";
 
-const server = fastify();
-
-server.get("/ping", async (request, reply) => {
-  return "pong\n";
-});
+const server = await buildApp();
 
 server.listen({ port: 8080 }, (err, address) => {
   if (err) {
