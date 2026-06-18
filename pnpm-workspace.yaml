@@ -15,7 +15,7 @@ catalog:
   prettier: ^3.8.3
 
   # Node types
-  "@types/node": ^22.10.2
+  "@types/node": ^22.19.19
 
   # React ecosystem
   react: ^19.2.0
