@@ -1,0 +1,1 @@
+TRUNCATE TABLE assignees, priorities, projects, statuses, tasks RESTART IDENTITY CASCADE;

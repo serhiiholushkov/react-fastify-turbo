@@ -10,6 +10,7 @@
     "start": "node --env-file=.env dist/index.js",
     "db:migrate": "drizzle-kit migrate",
     "db:generate": "drizzle-kit generate",
+    "db:seed": "tsx --env-file=.env src/db/seed.ts",
     "lint": "eslint",
     "check-types": "tsc --noEmit",
     "typecheck": "tsc --noEmit"
@@ -26,6 +27,7 @@
     "@fastify/swagger-ui": "^6.0.0",
     "@repo/contracts": "workspace:*",
     "drizzle-orm": "^0.45.2",
+    "drizzle-seed": "^0.3.1",
     "fastify": "^5.8.5",
     "fastify-plugin": "^6.0.0",
     "fastify-type-provider-zod": "^6.1.0",
