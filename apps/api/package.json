@@ -8,7 +8,7 @@
     "dev": "tsx watch --env-file=.env src/index.ts",
     "build": "tsc",
     "start": "node --env-file=.env dist/index.js",
-    "db:migrate": "tsx --env-file=.env src/db/migrate.ts",
+    "db:migrate": "drizzle-kit migrate",
     "db:generate": "drizzle-kit generate",
     "lint": "eslint",
     "check-types": "tsc --noEmit",
