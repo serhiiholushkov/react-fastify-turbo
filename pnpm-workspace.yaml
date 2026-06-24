@@ -2,6 +2,7 @@ packages:
   - "apps/*"
   - "packages/*"
 allowBuilds:
+  "@bufbuild/buf": true
   "@clerk/shared": false
   esbuild: false
   unrs-resolver: false
@@ -40,3 +41,10 @@ catalog:
   "@tanstack/react-router-ssr-query": 1.167.0
   "@tanstack/react-start": 1.168.10
   "@tanstack/devtools-vite": 0.7.0
+
+  # RPC and Protobuf tooling (packages/api-rpc)
+  "@bufbuild/protobuf": "^2.12.0"
+  "@connectrpc/connect": "^2.1.2"
+  "@bufbuild/buf": "^1.71.0"
+  "@bufbuild/protoc-gen-es": "^2.12.0"
+  "@connectrpc/protoc-gen-connect-es": "^1.7.0"

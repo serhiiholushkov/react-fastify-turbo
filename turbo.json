@@ -3,6 +3,9 @@
   "ui": "tui",
   "globalEnv": ["DEV"],
   "tasks": {
+    "generate": {
+      "outputs": ["src/gen/**"]
+    },
     "build": {
       "dependsOn": ["^build"],
       "inputs": ["$TURBO_DEFAULT$", ".env*"],
@@ -12,7 +15,7 @@
       "dependsOn": ["^lint"]
     },
     "check-types": {
-      "dependsOn": ["^check-types"]
+      "dependsOn": ["^check-types", "generate"]
     },
     "docker": {
       "cache": false

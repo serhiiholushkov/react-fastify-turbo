@@ -1,0 +1,9 @@
+version: v2
+modules:
+  - path: proto # Tells buf where your root proto folder lives
+lint:
+  use:
+    - STANDARD # Automatically applies the official community lint rules
+breaking:
+  use:
+    - FILE # Catches backwards-incompatible wire changes per file

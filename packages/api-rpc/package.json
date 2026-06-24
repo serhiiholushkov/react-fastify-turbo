@@ -1,0 +1,24 @@
+{
+  "name": "@repo/api-rpc",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "generate": "buf generate",
+    "check-types": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@bufbuild/buf": "catalog:",
+    "@bufbuild/protoc-gen-es": "catalog:",
+    "@connectrpc/protoc-gen-connect-es": "catalog:",
+    "@repo/typescript-config": "workspace:*",
+    "typescript": "catalog:"
+  },
+  "dependencies": {
+    "@bufbuild/protobuf": "catalog:",
+    "@connectrpc/connect": "catalog:"
+  }
+}
