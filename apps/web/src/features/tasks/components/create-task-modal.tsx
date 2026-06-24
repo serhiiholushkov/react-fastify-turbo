@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import { useRouter } from '@tanstack/react-router'
 import type { Assignee, Priority, Project } from '@repo/contracts'
 import {
   Button,
@@ -17,7 +16,7 @@ import {
   SelectValue,
   Textarea,
 } from '@repo/ui'
-import { createTask } from '../server/tasksActions'
+import { useCreateTaskMutation } from '../queries'
 
 type FormOptions = {
   priorities: Priority[]
@@ -67,10 +66,11 @@ function validate(values: FormValues): FormErrors {
 }
 
 export function CreateTaskModal({ open, onClose, formOptions }: Props) {
-  const router = useRouter()
+  const createTask = useCreateTaskMutation()
   const [values, setValues] = useState<FormValues>(INITIAL_VALUES)
   const [errors, setErrors] = useState<FormErrors>({})
-  const [submitting, setSubmitting] = useState(false)
+
+  const submitting = createTask.isPending
 
   const handleOpenChange = (isOpen: boolean) => {
     if (!isOpen) {
@@ -91,23 +91,17 @@ export function CreateTaskModal({ open, onClose, formOptions }: Props) {
       setErrors(validationErrors)
       return
     }
-    setSubmitting(true)
     try {
-      await createTask({
-        data: {
-          title: values.title.trim(),
-          description: values.description.trim(),
-          projectId: Number(values.projectId),
-          priorityId: Number(values.priorityId),
-          assigneeId: Number(values.assigneeId),
-        },
+      await createTask.mutateAsync({
+        title: values.title.trim(),
+        description: values.description.trim(),
+        projectId: Number(values.projectId),
+        priorityId: Number(values.priorityId),
+        assigneeId: Number(values.assigneeId),
       })
-      await router.invalidate()
       handleClose()
     } catch (err) {
       console.error('Failed to create task', err)
-    } finally {
-      setSubmitting(false)
     }
   }
 

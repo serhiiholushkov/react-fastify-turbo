@@ -1,6 +1,10 @@
+import { useSuspenseQuery } from '@tanstack/react-query'
 import { AllTasks } from '#/features/tasks/components/all-tasks.tsx'
 import { CreateTaskModal } from '#/features/tasks/components/create-task-modal.tsx'
-import { getFormOptions, getTasks } from '#/features/tasks/server/tasksActions'
+import {
+  tasksQueryOptions,
+  formOptionsQueryOptions,
+} from '#/features/tasks/queries'
 import { createFileRoute, useNavigate } from '@tanstack/react-router'
 
 export const Route = createFileRoute('/tasks')({
@@ -8,18 +12,18 @@ export const Route = createFileRoute('/tasks')({
     createTask:
       search['createTask'] === true || search['createTask'] === 'true',
   }),
-  component: RouteComponent,
-  loader: async () => {
-    const [tasks, formOptions] = await Promise.all([
-      getTasks(),
-      getFormOptions(),
+  loader: async ({ context: { queryClient } }) => {
+    await Promise.all([
+      queryClient.ensureQueryData(tasksQueryOptions),
+      queryClient.ensureQueryData(formOptionsQueryOptions),
     ])
-    return { tasks, formOptions }
   },
+  component: RouteComponent,
 })
 
 function RouteComponent() {
-  const { tasks, formOptions } = Route.useLoaderData()
+  const { data: tasks } = useSuspenseQuery(tasksQueryOptions)
+  const { data: formOptions } = useSuspenseQuery(formOptionsQueryOptions)
   const { createTask } = Route.useSearch()
   const navigate = useNavigate({ from: Route.fullPath })
 
