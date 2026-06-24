@@ -2,15 +2,26 @@
 // @generated from file tasks/v1/task_service.proto (package tasks.v1, syntax proto3)
 /* eslint-disable */
 
-import type { GenFile, GenMessage, GenService } from "@bufbuild/protobuf/codegenv2";
-import { fileDesc, messageDesc, serviceDesc } from "@bufbuild/protobuf/codegenv2";
+import type {
+  GenFile,
+  GenMessage,
+  GenService,
+} from "@bufbuild/protobuf/codegenv2";
+import {
+  fileDesc,
+  messageDesc,
+  serviceDesc,
+} from "@bufbuild/protobuf/codegenv2";
 import type { Message } from "@bufbuild/protobuf";
 
 /**
  * Describes the file tasks/v1/task_service.proto.
  */
-export const file_tasks_v1_task_service: GenFile = /*@__PURE__*/
-  fileDesc("Cht0YXNrcy92MS90YXNrX3NlcnZpY2UucHJvdG8SCHRhc2tzLnYxIkEKCEFzc2lnbmVlEgoKAmlkGAEgASgFEgwKBHNsdWcYAiABKAkSDAoEbmFtZRgDIAEoCRINCgVlbWFpbBgEIAEoCSJBCghQcmlvcml0eRIKCgJpZBgBIAEoBRIMCgRzbHVnGAIgASgJEgwKBG5hbWUYAyABKAkSDQoFb3JkZXIYBCABKAUiUwoHUHJvamVjdBIKCgJpZBgBIAEoBRIMCgRzbHVnGAIgASgJEgsKA2tleRgDIAEoCRIMCgRuYW1lGAQgASgJEhMKC2Rlc2NyaXB0aW9uGAUgASgJIj8KBlN0YXR1cxIKCgJpZBgBIAEoBRIMCgRuYW1lGAIgASgJEgwKBHNsdWcYAyABKAkSDQoFY29sb3IYBCABKAki/AEKBFRhc2sSCgoCaWQYASABKAUSDAoEc2x1ZxgCIAEoCRIiCgdwcm9qZWN0GAMgASgLMhEudGFza3MudjEuUHJvamVjdBIgCgZzdGF0dXMYBCABKAsyEC50YXNrcy52MS5TdGF0dXMSJAoIcHJpb3JpdHkYBSABKAsyEi50YXNrcy52MS5Qcmlvcml0eRIpCghhc3NpZ25lZRgGIAEoCzISLnRhc2tzLnYxLkFzc2lnbmVlSACIAQESDQoFdGl0bGUYByABKAkSEwoLZGVzY3JpcHRpb24YCCABKAkSEgoKY3JlYXRlZF9hdBgJIAEoCUILCglfYXNzaWduZWUiEQoPR2V0VGFza3NSZXF1ZXN0IhcKFUdldEZvcm1PcHRpb25zUmVxdWVzdCKKAQoRQ3JlYXRlVGFza1JlcXVlc3QSDQoFdGl0bGUYASABKAkSEwoLZGVzY3JpcHRpb24YAiABKAkSEgoKcHJvamVjdF9pZBgDIAEoBRITCgtwcmlvcml0eV9pZBgEIAEoBRIYCgthc3NpZ25lZV9pZBgFIAEoBUgAiAEBQg4KDF9hc3NpZ25lZV9pZCIxChBHZXRUYXNrc1Jlc3BvbnNlEh0KBXRhc2tzGAEgAygLMg4udGFza3MudjEuVGFzayKMAQoWR2V0Rm9ybU9wdGlvbnNSZXNwb25zZRImCgpwcmlvcml0aWVzGAEgAygLMhIudGFza3MudjEuUHJpb3JpdHkSIwoIcHJvamVjdHMYAiADKAsyES50YXNrcy52MS5Qcm9qZWN0EiUKCWFzc2lnbmVlcxgDIAMoCzISLnRhc2tzLnYxLkFzc2lnbmVlIjIKEkNyZWF0ZVRhc2tSZXNwb25zZRIcCgR0YXNrGAEgASgLMg4udGFza3MudjEuVGFzazLuAQoLVGFza1NlcnZpY2USQQoIR2V0VGFza3MSGS50YXNrcy52MS5HZXRUYXNrc1JlcXVlc3QaGi50YXNrcy52MS5HZXRUYXNrc1Jlc3BvbnNlElMKDkdldEZvcm1PcHRpb25zEh8udGFza3MudjEuR2V0Rm9ybU9wdGlvbnNSZXF1ZXN0GiAudGFza3MudjEuR2V0Rm9ybU9wdGlvbnNSZXNwb25zZRJHCgpDcmVhdGVUYXNrEhsudGFza3MudjEuQ3JlYXRlVGFza1JlcXVlc3QaHC50YXNrcy52MS5DcmVhdGVUYXNrUmVzcG9uc2ViBnByb3RvMw");
+export const file_tasks_v1_task_service: GenFile =
+  /*@__PURE__*/
+  fileDesc(
+    "Cht0YXNrcy92MS90YXNrX3NlcnZpY2UucHJvdG8SCHRhc2tzLnYxIkEKCEFzc2lnbmVlEgoKAmlkGAEgASgFEgwKBHNsdWcYAiABKAkSDAoEbmFtZRgDIAEoCRINCgVlbWFpbBgEIAEoCSJBCghQcmlvcml0eRIKCgJpZBgBIAEoBRIMCgRzbHVnGAIgASgJEgwKBG5hbWUYAyABKAkSDQoFb3JkZXIYBCABKAUiUwoHUHJvamVjdBIKCgJpZBgBIAEoBRIMCgRzbHVnGAIgASgJEgsKA2tleRgDIAEoCRIMCgRuYW1lGAQgASgJEhMKC2Rlc2NyaXB0aW9uGAUgASgJIj8KBlN0YXR1cxIKCgJpZBgBIAEoBRIMCgRuYW1lGAIgASgJEgwKBHNsdWcYAyABKAkSDQoFY29sb3IYBCABKAki/AEKBFRhc2sSCgoCaWQYASABKAUSDAoEc2x1ZxgCIAEoCRIiCgdwcm9qZWN0GAMgASgLMhEudGFza3MudjEuUHJvamVjdBIgCgZzdGF0dXMYBCABKAsyEC50YXNrcy52MS5TdGF0dXMSJAoIcHJpb3JpdHkYBSABKAsyEi50YXNrcy52MS5Qcmlvcml0eRIpCghhc3NpZ25lZRgGIAEoCzISLnRhc2tzLnYxLkFzc2lnbmVlSACIAQESDQoFdGl0bGUYByABKAkSEwoLZGVzY3JpcHRpb24YCCABKAkSEgoKY3JlYXRlZF9hdBgJIAEoCUILCglfYXNzaWduZWUiEQoPR2V0VGFza3NSZXF1ZXN0IhcKFUdldEZvcm1PcHRpb25zUmVxdWVzdCKKAQoRQ3JlYXRlVGFza1JlcXVlc3QSDQoFdGl0bGUYASABKAkSEwoLZGVzY3JpcHRpb24YAiABKAkSEgoKcHJvamVjdF9pZBgDIAEoBRITCgtwcmlvcml0eV9pZBgEIAEoBRIYCgthc3NpZ25lZV9pZBgFIAEoBUgAiAEBQg4KDF9hc3NpZ25lZV9pZCIxChBHZXRUYXNrc1Jlc3BvbnNlEh0KBXRhc2tzGAEgAygLMg4udGFza3MudjEuVGFzayKMAQoWR2V0Rm9ybU9wdGlvbnNSZXNwb25zZRImCgpwcmlvcml0aWVzGAEgAygLMhIudGFza3MudjEuUHJpb3JpdHkSIwoIcHJvamVjdHMYAiADKAsyES50YXNrcy52MS5Qcm9qZWN0EiUKCWFzc2lnbmVlcxgDIAMoCzISLnRhc2tzLnYxLkFzc2lnbmVlIjIKEkNyZWF0ZVRhc2tSZXNwb25zZRIcCgR0YXNrGAEgASgLMg4udGFza3MudjEuVGFzazLuAQoLVGFza1NlcnZpY2USQQoIR2V0VGFza3MSGS50YXNrcy52MS5HZXRUYXNrc1JlcXVlc3QaGi50YXNrcy52MS5HZXRUYXNrc1Jlc3BvbnNlElMKDkdldEZvcm1PcHRpb25zEh8udGFza3MudjEuR2V0Rm9ybU9wdGlvbnNSZXF1ZXN0GiAudGFza3MudjEuR2V0Rm9ybU9wdGlvbnNSZXNwb25zZRJHCgpDcmVhdGVUYXNrEhsudGFza3MudjEuQ3JlYXRlVGFza1JlcXVlc3QaHC50YXNrcy52MS5DcmVhdGVUYXNrUmVzcG9uc2ViBnByb3RvMw",
+  );
 
 /**
  * @generated from message tasks.v1.Assignee
@@ -43,7 +54,8 @@ export type Assignee = Message<"tasks.v1.Assignee"> & {
  * Describes the message tasks.v1.Assignee.
  * Use `create(AssigneeSchema)` to create a new message.
  */
-export const AssigneeSchema: GenMessage<Assignee> = /*@__PURE__*/
+export const AssigneeSchema: GenMessage<Assignee> =
+  /*@__PURE__*/
   messageDesc(file_tasks_v1_task_service, 0);
 
 /**
@@ -77,7 +89,8 @@ export type Priority = Message<"tasks.v1.Priority"> & {
  * Describes the message tasks.v1.Priority.
  * Use `create(PrioritySchema)` to create a new message.
  */
-export const PrioritySchema: GenMessage<Priority> = /*@__PURE__*/
+export const PrioritySchema: GenMessage<Priority> =
+  /*@__PURE__*/
   messageDesc(file_tasks_v1_task_service, 1);
 
 /**
@@ -118,7 +131,8 @@ export type Project = Message<"tasks.v1.Project"> & {
  * Describes the message tasks.v1.Project.
  * Use `create(ProjectSchema)` to create a new message.
  */
-export const ProjectSchema: GenMessage<Project> = /*@__PURE__*/
+export const ProjectSchema: GenMessage<Project> =
+  /*@__PURE__*/
   messageDesc(file_tasks_v1_task_service, 2);
 
 /**
@@ -154,7 +168,8 @@ export type Status = Message<"tasks.v1.Status"> & {
  * Describes the message tasks.v1.Status.
  * Use `create(StatusSchema)` to create a new message.
  */
-export const StatusSchema: GenMessage<Status> = /*@__PURE__*/
+export const StatusSchema: GenMessage<Status> =
+  /*@__PURE__*/
   messageDesc(file_tasks_v1_task_service, 3);
 
 /**
@@ -213,33 +228,35 @@ export type Task = Message<"tasks.v1.Task"> & {
  * Describes the message tasks.v1.Task.
  * Use `create(TaskSchema)` to create a new message.
  */
-export const TaskSchema: GenMessage<Task> = /*@__PURE__*/
+export const TaskSchema: GenMessage<Task> =
+  /*@__PURE__*/
   messageDesc(file_tasks_v1_task_service, 4);
 
 /**
  * @generated from message tasks.v1.GetTasksRequest
  */
-export type GetTasksRequest = Message<"tasks.v1.GetTasksRequest"> & {
-};
+export type GetTasksRequest = Message<"tasks.v1.GetTasksRequest"> & {};
 
 /**
  * Describes the message tasks.v1.GetTasksRequest.
  * Use `create(GetTasksRequestSchema)` to create a new message.
  */
-export const GetTasksRequestSchema: GenMessage<GetTasksRequest> = /*@__PURE__*/
+export const GetTasksRequestSchema: GenMessage<GetTasksRequest> =
+  /*@__PURE__*/
   messageDesc(file_tasks_v1_task_service, 5);
 
 /**
  * @generated from message tasks.v1.GetFormOptionsRequest
  */
-export type GetFormOptionsRequest = Message<"tasks.v1.GetFormOptionsRequest"> & {
-};
+export type GetFormOptionsRequest =
+  Message<"tasks.v1.GetFormOptionsRequest"> & {};
 
 /**
  * Describes the message tasks.v1.GetFormOptionsRequest.
  * Use `create(GetFormOptionsRequestSchema)` to create a new message.
  */
-export const GetFormOptionsRequestSchema: GenMessage<GetFormOptionsRequest> = /*@__PURE__*/
+export const GetFormOptionsRequestSchema: GenMessage<GetFormOptionsRequest> =
+  /*@__PURE__*/
   messageDesc(file_tasks_v1_task_service, 6);
 
 /**
@@ -276,7 +293,8 @@ export type CreateTaskRequest = Message<"tasks.v1.CreateTaskRequest"> & {
  * Describes the message tasks.v1.CreateTaskRequest.
  * Use `create(CreateTaskRequestSchema)` to create a new message.
  */
-export const CreateTaskRequestSchema: GenMessage<CreateTaskRequest> = /*@__PURE__*/
+export const CreateTaskRequestSchema: GenMessage<CreateTaskRequest> =
+  /*@__PURE__*/
   messageDesc(file_tasks_v1_task_service, 7);
 
 /**
@@ -293,34 +311,37 @@ export type GetTasksResponse = Message<"tasks.v1.GetTasksResponse"> & {
  * Describes the message tasks.v1.GetTasksResponse.
  * Use `create(GetTasksResponseSchema)` to create a new message.
  */
-export const GetTasksResponseSchema: GenMessage<GetTasksResponse> = /*@__PURE__*/
+export const GetTasksResponseSchema: GenMessage<GetTasksResponse> =
+  /*@__PURE__*/
   messageDesc(file_tasks_v1_task_service, 8);
 
 /**
  * @generated from message tasks.v1.GetFormOptionsResponse
  */
-export type GetFormOptionsResponse = Message<"tasks.v1.GetFormOptionsResponse"> & {
-  /**
-   * @generated from field: repeated tasks.v1.Priority priorities = 1;
-   */
-  priorities: Priority[];
+export type GetFormOptionsResponse =
+  Message<"tasks.v1.GetFormOptionsResponse"> & {
+    /**
+     * @generated from field: repeated tasks.v1.Priority priorities = 1;
+     */
+    priorities: Priority[];
 
-  /**
-   * @generated from field: repeated tasks.v1.Project projects = 2;
-   */
-  projects: Project[];
+    /**
+     * @generated from field: repeated tasks.v1.Project projects = 2;
+     */
+    projects: Project[];
 
-  /**
-   * @generated from field: repeated tasks.v1.Assignee assignees = 3;
-   */
-  assignees: Assignee[];
-};
+    /**
+     * @generated from field: repeated tasks.v1.Assignee assignees = 3;
+     */
+    assignees: Assignee[];
+  };
 
 /**
  * Describes the message tasks.v1.GetFormOptionsResponse.
  * Use `create(GetFormOptionsResponseSchema)` to create a new message.
  */
-export const GetFormOptionsResponseSchema: GenMessage<GetFormOptionsResponse> = /*@__PURE__*/
+export const GetFormOptionsResponseSchema: GenMessage<GetFormOptionsResponse> =
+  /*@__PURE__*/
   messageDesc(file_tasks_v1_task_service, 9);
 
 /**
@@ -337,7 +358,8 @@ export type CreateTaskResponse = Message<"tasks.v1.CreateTaskResponse"> & {
  * Describes the message tasks.v1.CreateTaskResponse.
  * Use `create(CreateTaskResponseSchema)` to create a new message.
  */
-export const CreateTaskResponseSchema: GenMessage<CreateTaskResponse> = /*@__PURE__*/
+export const CreateTaskResponseSchema: GenMessage<CreateTaskResponse> =
+  /*@__PURE__*/
   messageDesc(file_tasks_v1_task_service, 10);
 
 /**
@@ -351,7 +373,7 @@ export const TaskService: GenService<{
     methodKind: "unary";
     input: typeof GetTasksRequestSchema;
     output: typeof GetTasksResponseSchema;
-  },
+  };
   /**
    * @generated from rpc tasks.v1.TaskService.GetFormOptions
    */
@@ -359,7 +381,7 @@ export const TaskService: GenService<{
     methodKind: "unary";
     input: typeof GetFormOptionsRequestSchema;
     output: typeof GetFormOptionsResponseSchema;
-  },
+  };
   /**
    * @generated from rpc tasks.v1.TaskService.CreateTask
    */
@@ -367,7 +389,5 @@ export const TaskService: GenService<{
     methodKind: "unary";
     input: typeof CreateTaskRequestSchema;
     output: typeof CreateTaskResponseSchema;
-  },
-}> = /*@__PURE__*/
-  serviceDesc(file_tasks_v1_task_service, 0);
-
+  };
+}> = /*@__PURE__*/ serviceDesc(file_tasks_v1_task_service, 0);

@@ -3,7 +3,14 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { CreateTaskRequest, CreateTaskResponse, GetFormOptionsRequest, GetFormOptionsResponse, GetTasksRequest, GetTasksResponse } from "./task_service_pb.js";
+import {
+  CreateTaskRequest,
+  CreateTaskResponse,
+  GetFormOptionsRequest,
+  GetFormOptionsResponse,
+  GetTasksRequest,
+  GetTasksResponse,
+} from "./task_service_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -39,6 +46,5 @@ export const TaskService = {
       O: CreateTaskResponse,
       kind: MethodKind.Unary,
     },
-  }
+  },
 } as const;
-
