@@ -13,6 +13,11 @@ import "@fastify/jwt";
 import type { Database } from "../db/index.js";
 
 declare module "fastify" {
+  interface FastifyRequest {
+    /** Correlation ID attached by the onRequest hook for request tracing. */
+    correlationId: string;
+  }
+
   interface FastifyInstance {
     /** Drizzle ORM database client — added by db.plugin.ts */
     db: Database;

@@ -26,14 +26,14 @@ export function registerCommonHooks(fastify: FastifyInstance): void {
   fastify.addHook("onRequest", async (request) => {
     // Attach a correlation ID so all log lines for this request share an ID.
     // The client may send their own via X-Request-Id; fall back to a uuid.
-    (request as any).correlationId =
+    request.correlationId =
       (request.headers["x-request-id"] as string) ?? randomUUID();
 
     request.log.info(
       {
         method: request.method,
         url: request.url,
-        reqId: (request as any).correlationId,
+        reqId: request.correlationId,
       },
       "incoming request",
     );
@@ -49,7 +49,7 @@ export function registerCommonHooks(fastify: FastifyInstance): void {
         url: request.url,
         statusCode: reply.statusCode,
         durationMs: reply.elapsedTime,
-        reqId: (request as any).correlationId,
+        reqId: request.correlationId,
       },
       "request completed",
     );
@@ -60,7 +60,7 @@ export function registerCommonHooks(fastify: FastifyInstance): void {
   // Use setErrorHandler() to shape the error response.
   fastify.addHook("onError", async (request, _reply, error) => {
     request.log.error(
-      { err: error, reqId: (request as any).correlationId },
+      { err: error, reqId: request.correlationId },
       "request error",
     );
   });

@@ -8,9 +8,5 @@ export async function buildApp() {
   await server.register(dbPlugin);
   await server.register(tasksPlugin);
 
-  server.get("/ping", async (request, reply) => {
-    return "pong\n";
-  });
-
   return server;
 }
