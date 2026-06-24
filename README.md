@@ -19,3 +19,7 @@ Example:
 ```
 pnpm --filter @repo/api db:seed
 ```
+
+```
+pnpm --filter @repo/api-rpc generate
+```

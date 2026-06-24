@@ -1,0 +1,91 @@
+syntax = "proto3";
+
+package tasks.v1;
+
+// ── Embedded entity messages ──────────────────────────────────────────────────
+
+message Assignee {
+  int32 id = 1;
+  // Lowercase name without spaces, e.g. "emmajones"
+  string slug = 2;
+  string name = 3;
+  string email = 4;
+}
+
+message Priority {
+  int32 id = 1;
+  // Lowercase name without spaces, e.g. "no-priority"
+  string slug = 2;
+  string name = 3;
+  int32 order = 4;
+}
+
+message Project {
+  int32 id = 1;
+  // Lowercase version of key, e.g. "core"
+  string slug = 2;
+  // Short uppercase prefix used in task slugs, e.g. "CORE"
+  string key = 3;
+  string name = 4;
+  string description = 5;
+}
+
+message Status {
+  int32 id = 1;
+  string name = 2;
+  // Lowercase name without spaces, e.g. "in-progress"
+  string slug = 3;
+  // HTML hex colour, e.g. "#f97316"
+  string color = 4;
+}
+
+message Task {
+  int32 id = 1;
+  // Human-friendly identifier combining project key and task id, e.g. "CORE-1"
+  string slug = 2;
+  Project project = 3;
+  Status status = 4;
+  Priority priority = 5;
+  optional Assignee assignee = 6;
+  string title = 7;
+  string description = 8;
+  string created_at = 9;
+}
+
+// ── Requests ──────────────────────────────────────────────────────────────────
+
+message GetTasksRequest {}
+
+message GetFormOptionsRequest {}
+
+message CreateTaskRequest {
+  string title = 1;
+  string description = 2;
+  int32 project_id = 3;
+  int32 priority_id = 4;
+  optional int32 assignee_id = 5;
+}
+
+// ── Responses ─────────────────────────────────────────────────────────────────
+
+message GetTasksResponse {
+  repeated Task tasks = 1;
+}
+
+message GetFormOptionsResponse {
+  repeated Priority priorities = 1;
+  repeated Project projects = 2;
+  repeated Assignee assignees = 3;
+}
+
+message CreateTaskResponse {
+  Task task = 1;
+}
+
+// ── Service ───────────────────────────────────────────────────────────────────
+
+service TaskService {
+  rpc GetTasks(GetTasksRequest) returns (GetTasksResponse);
+  rpc GetFormOptions(GetFormOptionsRequest) returns (GetFormOptionsResponse);
+  rpc CreateTask(CreateTaskRequest) returns (CreateTaskResponse);
+}
