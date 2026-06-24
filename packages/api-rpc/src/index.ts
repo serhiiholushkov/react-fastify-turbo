@@ -1,2 +1,1 @@
-// Generated exports will be re-exported here after running `pnpm generate`.
-// export * from "./gen/index.js";
+export * from "./gen/tasks/v1/task_service_pb.js";
