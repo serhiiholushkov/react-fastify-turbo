@@ -1,3 +1,4 @@
+import { randomUUID } from "node:crypto";
 import type { ServiceImpl } from "@connectrpc/connect";
 import { ConnectError, Code } from "@connectrpc/connect";
 import { eq } from "drizzle-orm";
@@ -83,7 +84,7 @@ export function createTaskServiceImpl(
             priorityId,
             statusId: defaultStatus.id,
             assigneeId: assigneeId ?? null,
-            slug: "pending",
+            slug: randomUUID(),
           })
           .returning({ id: tasks.id });
 
