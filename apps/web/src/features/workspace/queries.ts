@@ -10,7 +10,7 @@ import type {
   Status,
   Task,
   CreateTaskRequest,
-} from '@repo/contracts'
+} from '@repo/api-rest'
 import type {
   Assignee as RpcAssignee,
   Priority as RpcPriority,

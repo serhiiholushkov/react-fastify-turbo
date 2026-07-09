@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "@repo/api-rpc": "workspace:*",
-    "@repo/contracts": "workspace:*",
+    "@repo/api-rest": "workspace:*",
     "@repo/ui": "workspace:*",
     "@connectrpc/connect": "catalog:",
     "@connectrpc/connect-web": "catalog:",

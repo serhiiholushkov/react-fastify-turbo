@@ -4,9 +4,15 @@
     "outDir": "dist",
     "rootDir": "src",
     "paths": {
-      "@repo/contracts": ["../../packages/contracts/src/index.ts"]
+      "@repo/api-rest": [
+        "../../packages/api-rest/src/index.ts"
+      ]
     },
-    "types": ["node"]
+    "types": [
+      "node"
+    ]
   },
-  "include": ["src"]
+  "include": [
+    "src"
+  ]
 }

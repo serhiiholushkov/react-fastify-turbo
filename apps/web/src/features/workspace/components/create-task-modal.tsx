@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import type { Assignee, Priority, Project } from '@repo/contracts'
+import type { Assignee, Priority, Project } from '@repo/api-rest'
 import {
   Button,
   Dialog,

@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import type { Task } from '@repo/contracts'
+import type { Task } from '@repo/api-rest'
 import { Avatar, AvatarFallback, Badge, Separator, cn } from '@repo/ui'
 import {
   AlertCircle,
