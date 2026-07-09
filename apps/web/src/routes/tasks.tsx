@@ -1,10 +1,10 @@
 import { useSuspenseQuery } from '@tanstack/react-query'
-import { AllTasks } from '#/features/tasks/components/all-tasks.tsx'
-import { CreateTaskModal } from '#/features/tasks/components/create-task-modal.tsx'
+import { AllTasks } from '#/features/workspace/components/all-tasks.tsx'
+import { CreateTaskModal } from '#/features/workspace/components/create-task-modal.tsx'
 import {
   tasksQueryOptions,
   formOptionsQueryOptions,
-} from '#/features/tasks/queries'
+} from '#/features/workspace/queries'
 import { createFileRoute, useNavigate } from '@tanstack/react-router'
 
 export const Route = createFileRoute('/tasks')({

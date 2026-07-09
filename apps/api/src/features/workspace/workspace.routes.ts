@@ -1,9 +1,9 @@
 import type { ConnectRouter } from "@connectrpc/connect";
 import type { FastifyInstance } from "fastify";
 import { TaskService } from "@repo/api-rpc";
-import { createTaskServiceImpl } from "./tasks.service.js";
+import { createTaskServiceImpl } from "./task.service.js";
 
-export function registerTaskRoutes(
+export function registerWorkspaceRoutes(
   router: ConnectRouter,
   fastify: FastifyInstance,
 ) {

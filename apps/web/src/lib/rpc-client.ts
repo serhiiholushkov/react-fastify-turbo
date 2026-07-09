@@ -6,4 +6,4 @@ const transport = createConnectTransport({
   baseUrl: import.meta.env.VITE_API_URL ?? 'http://localhost:8080',
 })
 
-export const tasksRpcClient = createClient(TaskService, transport)
+export const taskRpcClient = createClient(TaskService, transport)

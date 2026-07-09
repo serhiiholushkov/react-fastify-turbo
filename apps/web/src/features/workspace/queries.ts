@@ -18,7 +18,7 @@ import type {
   Status as RpcStatus,
   Task as RpcTask,
 } from '@repo/api-rpc'
-import { tasksRpcClient } from '#/lib/rpc-client'
+import { taskRpcClient } from '#/lib/rpc-client'
 
 function toAssignee(rpc: RpcAssignee): Assignee {
   return { id: rpc.id, slug: rpc.slug, name: rpc.name, email: rpc.email }
@@ -57,17 +57,17 @@ function toTask(rpc: RpcTask): Task {
 }
 
 export const tasksQueryOptions = queryOptions({
-  queryKey: ['tasks'],
+  queryKey: ['workspace', 'tasks'],
   queryFn: async () => {
-    const res = await tasksRpcClient.getTasks({})
+    const res = await taskRpcClient.getTasks({})
     return res.tasks.map(toTask)
   },
 })
 
 export const formOptionsQueryOptions = queryOptions({
-  queryKey: ['tasks', 'formOptions'],
+  queryKey: ['workspace', 'formOptions'],
   queryFn: async () => {
-    const res = await tasksRpcClient.getFormOptions({})
+    const res = await taskRpcClient.getFormOptions({})
     return {
       priorities: res.priorities.map(toPriority),
       projects: res.projects.map(toProject),
@@ -80,7 +80,7 @@ export function useCreateTaskMutation() {
   const queryClient = useQueryClient()
   return useMutation({
     mutationFn: (data: CreateTaskRequest) =>
-      tasksRpcClient.createTask({
+      taskRpcClient.createTask({
         title: data.title,
         description: data.description,
         projectId: data.projectId,
@@ -88,7 +88,7 @@ export function useCreateTaskMutation() {
         assigneeId: data.assigneeId ?? undefined,
       }),
     onSuccess: () => {
-      void queryClient.invalidateQueries({ queryKey: ['tasks'] })
+      void queryClient.invalidateQueries({ queryKey: ['workspace'] })
     },
   })
 }

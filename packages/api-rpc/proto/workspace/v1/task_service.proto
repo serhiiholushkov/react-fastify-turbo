@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package tasks.v1;
+package workspace.v1;
 
 // ── Embedded entity messages ──────────────────────────────────────────────────
 
