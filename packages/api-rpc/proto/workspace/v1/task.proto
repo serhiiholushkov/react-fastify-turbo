@@ -2,42 +2,12 @@ syntax = "proto3";
 
 package workspace.v1;
 
-// ── Embedded entity messages ──────────────────────────────────────────────────
+import "workspace/v1/assignee.proto";
+import "workspace/v1/priority.proto";
+import "workspace/v1/project.proto";
+import "workspace/v1/status.proto";
 
-message Assignee {
-  int32 id = 1;
-  // Lowercase name without spaces, e.g. "emmajones"
-  string slug = 2;
-  string name = 3;
-  string email = 4;
-}
-
-message Priority {
-  int32 id = 1;
-  // Lowercase name without spaces, e.g. "no-priority"
-  string slug = 2;
-  string name = 3;
-  int32 order = 4;
-}
-
-message Project {
-  int32 id = 1;
-  // Lowercase version of key, e.g. "core"
-  string slug = 2;
-  // Short uppercase prefix used in task slugs, e.g. "CORE"
-  string key = 3;
-  string name = 4;
-  string description = 5;
-}
-
-message Status {
-  int32 id = 1;
-  string name = 2;
-  // Lowercase name without spaces, e.g. "in-progress"
-  string slug = 3;
-  // HTML hex colour, e.g. "#f97316"
-  string color = 4;
-}
+// ── Entity ────────────────────────────────────────────────────────────────────
 
 message Task {
   int32 id = 1;

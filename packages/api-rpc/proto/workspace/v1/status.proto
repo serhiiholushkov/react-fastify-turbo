@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package workspace.v1;
+
+message Status {
+  int32 id = 1;
+  string name = 2;
+  // Lowercase name without spaces, e.g. "in-progress"
+  string slug = 3;
+  // HTML hex colour, e.g. "#f97316"
+  string color = 4;
+}

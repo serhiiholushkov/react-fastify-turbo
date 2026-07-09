@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package workspace.v1;
+
+message Assignee {
+  int32 id = 1;
+  // Lowercase name without spaces, e.g. "emmajones"
+  string slug = 2;
+  string name = 3;
+  string email = 4;
+}

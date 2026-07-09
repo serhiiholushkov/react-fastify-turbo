@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package workspace.v1;
+
+message Project {
+  int32 id = 1;
+  // Lowercase version of key, e.g. "core"
+  string slug = 2;
+  // Short uppercase prefix used in task slugs, e.g. "CORE"
+  string key = 3;
+  string name = 4;
+  string description = 5;
+}

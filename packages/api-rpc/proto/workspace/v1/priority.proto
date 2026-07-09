@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package workspace.v1;
+
+message Priority {
+  int32 id = 1;
+  // Lowercase name without spaces, e.g. "no-priority"
+  string slug = 2;
+  string name = 3;
+  int32 order = 4;
+}
