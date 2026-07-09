@@ -8,7 +8,8 @@
   },
   "scripts": {
     "generate": "buf generate",
-    "check-types": "tsc --noEmit"
+    "check-types": "tsc --noEmit",
+    "format": "prettier --write . && eslint --fix"
   },
   "devDependencies": {
     "@bufbuild/buf": "catalog:",

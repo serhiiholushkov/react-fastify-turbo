@@ -11,7 +11,8 @@
   },
   "scripts": {
     "lint": "eslint",
-    "check-types": "tsc --noEmit"
+    "check-types": "tsc --noEmit",
+    "format": "prettier --write . && eslint --fix"
   },
   "dependencies": {
     "class-variance-authority": "catalog:",
