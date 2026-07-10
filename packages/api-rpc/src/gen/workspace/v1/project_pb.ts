@@ -9,11 +9,8 @@ import type { Message } from "@bufbuild/protobuf";
 /**
  * Describes the file workspace/v1/project.proto.
  */
-export const file_workspace_v1_project: GenFile =
-  /*@__PURE__*/
-  fileDesc(
-    "Chp3b3Jrc3BhY2UvdjEvcHJvamVjdC5wcm90bxIMd29ya3NwYWNlLnYxIlMKB1Byb2plY3QSCgoCaWQYASABKAUSDAoEc2x1ZxgCIAEoCRILCgNrZXkYAyABKAkSDAoEbmFtZRgEIAEoCRITCgtkZXNjcmlwdGlvbhgFIAEoCWIGcHJvdG8z",
-  );
+export const file_workspace_v1_project: GenFile = /*@__PURE__*/
+  fileDesc("Chp3b3Jrc3BhY2UvdjEvcHJvamVjdC5wcm90bxIMd29ya3NwYWNlLnYxIlMKB1Byb2plY3QSCgoCaWQYASABKAUSDAoEc2x1ZxgCIAEoCRILCgNrZXkYAyABKAkSDAoEbmFtZRgEIAEoCRITCgtkZXNjcmlwdGlvbhgFIAEoCWIGcHJvdG8z");
 
 /**
  * @generated from message workspace.v1.Project
@@ -53,6 +50,6 @@ export type Project = Message<"workspace.v1.Project"> & {
  * Describes the message workspace.v1.Project.
  * Use `create(ProjectSchema)` to create a new message.
  */
-export const ProjectSchema: GenMessage<Project> =
-  /*@__PURE__*/
+export const ProjectSchema: GenMessage<Project> = /*@__PURE__*/
   messageDesc(file_workspace_v1_project, 0);
+

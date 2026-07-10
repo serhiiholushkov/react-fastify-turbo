@@ -9,11 +9,8 @@ import type { Message } from "@bufbuild/protobuf";
 /**
  * Describes the file workspace/v1/priority.proto.
  */
-export const file_workspace_v1_priority: GenFile =
-  /*@__PURE__*/
-  fileDesc(
-    "Cht3b3Jrc3BhY2UvdjEvcHJpb3JpdHkucHJvdG8SDHdvcmtzcGFjZS52MSJBCghQcmlvcml0eRIKCgJpZBgBIAEoBRIMCgRzbHVnGAIgASgJEgwKBG5hbWUYAyABKAkSDQoFb3JkZXIYBCABKAViBnByb3RvMw",
-  );
+export const file_workspace_v1_priority: GenFile = /*@__PURE__*/
+  fileDesc("Cht3b3Jrc3BhY2UvdjEvcHJpb3JpdHkucHJvdG8SDHdvcmtzcGFjZS52MSJBCghQcmlvcml0eRIKCgJpZBgBIAEoBRIMCgRzbHVnGAIgASgJEgwKBG5hbWUYAyABKAkSDQoFb3JkZXIYBCABKAViBnByb3RvMw");
 
 /**
  * @generated from message workspace.v1.Priority
@@ -46,6 +43,6 @@ export type Priority = Message<"workspace.v1.Priority"> & {
  * Describes the message workspace.v1.Priority.
  * Use `create(PrioritySchema)` to create a new message.
  */
-export const PrioritySchema: GenMessage<Priority> =
-  /*@__PURE__*/
+export const PrioritySchema: GenMessage<Priority> = /*@__PURE__*/
   messageDesc(file_workspace_v1_priority, 0);
+

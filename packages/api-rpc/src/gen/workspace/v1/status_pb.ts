@@ -9,11 +9,8 @@ import type { Message } from "@bufbuild/protobuf";
 /**
  * Describes the file workspace/v1/status.proto.
  */
-export const file_workspace_v1_status: GenFile =
-  /*@__PURE__*/
-  fileDesc(
-    "Chl3b3Jrc3BhY2UvdjEvc3RhdHVzLnByb3RvEgx3b3Jrc3BhY2UudjEiPwoGU3RhdHVzEgoKAmlkGAEgASgFEgwKBG5hbWUYAiABKAkSDAoEc2x1ZxgDIAEoCRINCgVjb2xvchgEIAEoCWIGcHJvdG8z",
-  );
+export const file_workspace_v1_status: GenFile = /*@__PURE__*/
+  fileDesc("Chl3b3Jrc3BhY2UvdjEvc3RhdHVzLnByb3RvEgx3b3Jrc3BhY2UudjEiPwoGU3RhdHVzEgoKAmlkGAEgASgFEgwKBG5hbWUYAiABKAkSDAoEc2x1ZxgDIAEoCRINCgVjb2xvchgEIAEoCWIGcHJvdG8z");
 
 /**
  * @generated from message workspace.v1.Status
@@ -48,6 +45,6 @@ export type Status = Message<"workspace.v1.Status"> & {
  * Describes the message workspace.v1.Status.
  * Use `create(StatusSchema)` to create a new message.
  */
-export const StatusSchema: GenMessage<Status> =
-  /*@__PURE__*/
+export const StatusSchema: GenMessage<Status> = /*@__PURE__*/
   messageDesc(file_workspace_v1_status, 0);
+
