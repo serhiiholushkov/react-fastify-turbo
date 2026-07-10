@@ -9,8 +9,11 @@ import type { Message } from "@bufbuild/protobuf";
 /**
  * Describes the file workspace/v1/assignee.proto.
  */
-export const file_workspace_v1_assignee: GenFile = /*@__PURE__*/
-  fileDesc("Cht3b3Jrc3BhY2UvdjEvYXNzaWduZWUucHJvdG8SDHdvcmtzcGFjZS52MSJBCghBc3NpZ25lZRIKCgJpZBgBIAEoBRIMCgRzbHVnGAIgASgJEgwKBG5hbWUYAyABKAkSDQoFZW1haWwYBCABKAliBnByb3RvMw");
+export const file_workspace_v1_assignee: GenFile =
+  /*@__PURE__*/
+  fileDesc(
+    "Cht3b3Jrc3BhY2UvdjEvYXNzaWduZWUucHJvdG8SDHdvcmtzcGFjZS52MSJBCghBc3NpZ25lZRIKCgJpZBgBIAEoBRIMCgRzbHVnGAIgASgJEgwKBG5hbWUYAyABKAkSDQoFZW1haWwYBCABKAliBnByb3RvMw",
+  );
 
 /**
  * @generated from message workspace.v1.Assignee
@@ -43,6 +46,6 @@ export type Assignee = Message<"workspace.v1.Assignee"> & {
  * Describes the message workspace.v1.Assignee.
  * Use `create(AssigneeSchema)` to create a new message.
  */
-export const AssigneeSchema: GenMessage<Assignee> = /*@__PURE__*/
+export const AssigneeSchema: GenMessage<Assignee> =
+  /*@__PURE__*/
   messageDesc(file_workspace_v1_assignee, 0);
-

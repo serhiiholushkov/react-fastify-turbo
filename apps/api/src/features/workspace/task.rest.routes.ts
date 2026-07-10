@@ -1,3 +1,4 @@
+import { z } from "zod";
 import type { FastifyInstance } from "fastify";
 import type { ZodTypeProvider } from "fastify-type-provider-zod";
 import {
@@ -8,6 +9,12 @@ import {
 } from "@repo/api-rest";
 import { createTaskService } from "./task.service.js";
 
+const errorSchema = z.object({
+  statusCode: z.number(),
+  error: z.string(),
+  message: z.string(),
+});
+
 export function registerTaskRestRoutes(fastify: FastifyInstance) {
   const f = fastify.withTypeProvider<ZodTypeProvider>();
   const svc = createTaskService(fastify.db);
@@ -17,7 +24,12 @@ export function registerTaskRestRoutes(fastify: FastifyInstance) {
     "/v1/tasks",
     {
       schema: {
-        response: { 200: getTasksResponseSchema },
+        tags: ["tasks"],
+        summary: "List all tasks",
+        response: {
+          200: getTasksResponseSchema,
+          500: errorSchema,
+        },
       },
     },
     async () => {
@@ -30,7 +42,12 @@ export function registerTaskRestRoutes(fastify: FastifyInstance) {
     "/v1/tasks/form-options",
     {
       schema: {
-        response: { 200: getFormOptionsResponseSchema },
+        tags: ["tasks"],
+        summary: "Get form options for task creation",
+        response: {
+          200: getFormOptionsResponseSchema,
+          500: errorSchema,
+        },
       },
     },
     async () => {
@@ -43,8 +60,15 @@ export function registerTaskRestRoutes(fastify: FastifyInstance) {
     "/v1/tasks",
     {
       schema: {
+        tags: ["tasks"],
+        summary: "Create a new task",
         body: createTaskSchema,
-        response: { 201: createTaskResponseSchema },
+        response: {
+          201: createTaskResponseSchema,
+          400: errorSchema,
+          404: errorSchema,
+          500: errorSchema,
+        },
       },
     },
     async (request, reply) => {

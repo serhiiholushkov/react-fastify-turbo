@@ -2,8 +2,16 @@
 // @generated from file workspace/v1/task.proto (package workspace.v1, syntax proto3)
 /* eslint-disable */
 
-import type { GenFile, GenMessage, GenService } from "@bufbuild/protobuf/codegenv2";
-import { fileDesc, messageDesc, serviceDesc } from "@bufbuild/protobuf/codegenv2";
+import type {
+  GenFile,
+  GenMessage,
+  GenService,
+} from "@bufbuild/protobuf/codegenv2";
+import {
+  fileDesc,
+  messageDesc,
+  serviceDesc,
+} from "@bufbuild/protobuf/codegenv2";
 import type { Assignee } from "./assignee_pb.js";
 import { file_workspace_v1_assignee } from "./assignee_pb.js";
 import type { Priority } from "./priority_pb.js";
@@ -17,8 +25,17 @@ import type { Message } from "@bufbuild/protobuf";
 /**
  * Describes the file workspace/v1/task.proto.
  */
-export const file_workspace_v1_task: GenFile = /*@__PURE__*/
-  fileDesc("Chd3b3Jrc3BhY2UvdjEvdGFzay5wcm90bxIMd29ya3NwYWNlLnYxIowCCgRUYXNrEgoKAmlkGAEgASgFEgwKBHNsdWcYAiABKAkSJgoHcHJvamVjdBgDIAEoCzIVLndvcmtzcGFjZS52MS5Qcm9qZWN0EiQKBnN0YXR1cxgEIAEoCzIULndvcmtzcGFjZS52MS5TdGF0dXMSKAoIcHJpb3JpdHkYBSABKAsyFi53b3Jrc3BhY2UudjEuUHJpb3JpdHkSLQoIYXNzaWduZWUYBiABKAsyFi53b3Jrc3BhY2UudjEuQXNzaWduZWVIAIgBARINCgV0aXRsZRgHIAEoCRITCgtkZXNjcmlwdGlvbhgIIAEoCRISCgpjcmVhdGVkX2F0GAkgASgJQgsKCV9hc3NpZ25lZSIRCg9HZXRUYXNrc1JlcXVlc3QiFwoVR2V0Rm9ybU9wdGlvbnNSZXF1ZXN0IooBChFDcmVhdGVUYXNrUmVxdWVzdBINCgV0aXRsZRgBIAEoCRITCgtkZXNjcmlwdGlvbhgCIAEoCRISCgpwcm9qZWN0X2lkGAMgASgFEhMKC3ByaW9yaXR5X2lkGAQgASgFEhgKC2Fzc2lnbmVlX2lkGAUgASgFSACIAQFCDgoMX2Fzc2lnbmVlX2lkIjUKEEdldFRhc2tzUmVzcG9uc2USIQoFdGFza3MYASADKAsyEi53b3Jrc3BhY2UudjEuVGFzayKYAQoWR2V0Rm9ybU9wdGlvbnNSZXNwb25zZRIqCgpwcmlvcml0aWVzGAEgAygLMhYud29ya3NwYWNlLnYxLlByaW9yaXR5EicKCHByb2plY3RzGAIgAygLMhUud29ya3NwYWNlLnYxLlByb2plY3QSKQoJYXNzaWduZWVzGAMgAygLMhYud29ya3NwYWNlLnYxLkFzc2lnbmVlIjYKEkNyZWF0ZVRhc2tSZXNwb25zZRIgCgR0YXNrGAEgASgLMhIud29ya3NwYWNlLnYxLlRhc2syhgIKC1Rhc2tTZXJ2aWNlEkkKCEdldFRhc2tzEh0ud29ya3NwYWNlLnYxLkdldFRhc2tzUmVxdWVzdBoeLndvcmtzcGFjZS52MS5HZXRUYXNrc1Jlc3BvbnNlElsKDkdldEZvcm1PcHRpb25zEiMud29ya3NwYWNlLnYxLkdldEZvcm1PcHRpb25zUmVxdWVzdBokLndvcmtzcGFjZS52MS5HZXRGb3JtT3B0aW9uc1Jlc3BvbnNlEk8KCkNyZWF0ZVRhc2sSHy53b3Jrc3BhY2UudjEuQ3JlYXRlVGFza1JlcXVlc3QaIC53b3Jrc3BhY2UudjEuQ3JlYXRlVGFza1Jlc3BvbnNlYgZwcm90bzM", [file_workspace_v1_assignee, file_workspace_v1_priority, file_workspace_v1_project, file_workspace_v1_status]);
+export const file_workspace_v1_task: GenFile =
+  /*@__PURE__*/
+  fileDesc(
+    "Chd3b3Jrc3BhY2UvdjEvdGFzay5wcm90bxIMd29ya3NwYWNlLnYxIowCCgRUYXNrEgoKAmlkGAEgASgFEgwKBHNsdWcYAiABKAkSJgoHcHJvamVjdBgDIAEoCzIVLndvcmtzcGFjZS52MS5Qcm9qZWN0EiQKBnN0YXR1cxgEIAEoCzIULndvcmtzcGFjZS52MS5TdGF0dXMSKAoIcHJpb3JpdHkYBSABKAsyFi53b3Jrc3BhY2UudjEuUHJpb3JpdHkSLQoIYXNzaWduZWUYBiABKAsyFi53b3Jrc3BhY2UudjEuQXNzaWduZWVIAIgBARINCgV0aXRsZRgHIAEoCRITCgtkZXNjcmlwdGlvbhgIIAEoCRISCgpjcmVhdGVkX2F0GAkgASgJQgsKCV9hc3NpZ25lZSIRCg9HZXRUYXNrc1JlcXVlc3QiFwoVR2V0Rm9ybU9wdGlvbnNSZXF1ZXN0IooBChFDcmVhdGVUYXNrUmVxdWVzdBINCgV0aXRsZRgBIAEoCRITCgtkZXNjcmlwdGlvbhgCIAEoCRISCgpwcm9qZWN0X2lkGAMgASgFEhMKC3ByaW9yaXR5X2lkGAQgASgFEhgKC2Fzc2lnbmVlX2lkGAUgASgFSACIAQFCDgoMX2Fzc2lnbmVlX2lkIjUKEEdldFRhc2tzUmVzcG9uc2USIQoFdGFza3MYASADKAsyEi53b3Jrc3BhY2UudjEuVGFzayKYAQoWR2V0Rm9ybU9wdGlvbnNSZXNwb25zZRIqCgpwcmlvcml0aWVzGAEgAygLMhYud29ya3NwYWNlLnYxLlByaW9yaXR5EicKCHByb2plY3RzGAIgAygLMhUud29ya3NwYWNlLnYxLlByb2plY3QSKQoJYXNzaWduZWVzGAMgAygLMhYud29ya3NwYWNlLnYxLkFzc2lnbmVlIjYKEkNyZWF0ZVRhc2tSZXNwb25zZRIgCgR0YXNrGAEgASgLMhIud29ya3NwYWNlLnYxLlRhc2syhgIKC1Rhc2tTZXJ2aWNlEkkKCEdldFRhc2tzEh0ud29ya3NwYWNlLnYxLkdldFRhc2tzUmVxdWVzdBoeLndvcmtzcGFjZS52MS5HZXRUYXNrc1Jlc3BvbnNlElsKDkdldEZvcm1PcHRpb25zEiMud29ya3NwYWNlLnYxLkdldEZvcm1PcHRpb25zUmVxdWVzdBokLndvcmtzcGFjZS52MS5HZXRGb3JtT3B0aW9uc1Jlc3BvbnNlEk8KCkNyZWF0ZVRhc2sSHy53b3Jrc3BhY2UudjEuQ3JlYXRlVGFza1JlcXVlc3QaIC53b3Jrc3BhY2UudjEuQ3JlYXRlVGFza1Jlc3BvbnNlYgZwcm90bzM",
+    [
+      file_workspace_v1_assignee,
+      file_workspace_v1_priority,
+      file_workspace_v1_project,
+      file_workspace_v1_status,
+    ],
+  );
 
 /**
  * @generated from message workspace.v1.Task
@@ -76,33 +93,35 @@ export type Task = Message<"workspace.v1.Task"> & {
  * Describes the message workspace.v1.Task.
  * Use `create(TaskSchema)` to create a new message.
  */
-export const TaskSchema: GenMessage<Task> = /*@__PURE__*/
+export const TaskSchema: GenMessage<Task> =
+  /*@__PURE__*/
   messageDesc(file_workspace_v1_task, 0);
 
 /**
  * @generated from message workspace.v1.GetTasksRequest
  */
-export type GetTasksRequest = Message<"workspace.v1.GetTasksRequest"> & {
-};
+export type GetTasksRequest = Message<"workspace.v1.GetTasksRequest"> & {};
 
 /**
  * Describes the message workspace.v1.GetTasksRequest.
  * Use `create(GetTasksRequestSchema)` to create a new message.
  */
-export const GetTasksRequestSchema: GenMessage<GetTasksRequest> = /*@__PURE__*/
+export const GetTasksRequestSchema: GenMessage<GetTasksRequest> =
+  /*@__PURE__*/
   messageDesc(file_workspace_v1_task, 1);
 
 /**
  * @generated from message workspace.v1.GetFormOptionsRequest
  */
-export type GetFormOptionsRequest = Message<"workspace.v1.GetFormOptionsRequest"> & {
-};
+export type GetFormOptionsRequest =
+  Message<"workspace.v1.GetFormOptionsRequest"> & {};
 
 /**
  * Describes the message workspace.v1.GetFormOptionsRequest.
  * Use `create(GetFormOptionsRequestSchema)` to create a new message.
  */
-export const GetFormOptionsRequestSchema: GenMessage<GetFormOptionsRequest> = /*@__PURE__*/
+export const GetFormOptionsRequestSchema: GenMessage<GetFormOptionsRequest> =
+  /*@__PURE__*/
   messageDesc(file_workspace_v1_task, 2);
 
 /**
@@ -139,7 +158,8 @@ export type CreateTaskRequest = Message<"workspace.v1.CreateTaskRequest"> & {
  * Describes the message workspace.v1.CreateTaskRequest.
  * Use `create(CreateTaskRequestSchema)` to create a new message.
  */
-export const CreateTaskRequestSchema: GenMessage<CreateTaskRequest> = /*@__PURE__*/
+export const CreateTaskRequestSchema: GenMessage<CreateTaskRequest> =
+  /*@__PURE__*/
   messageDesc(file_workspace_v1_task, 3);
 
 /**
@@ -156,34 +176,37 @@ export type GetTasksResponse = Message<"workspace.v1.GetTasksResponse"> & {
  * Describes the message workspace.v1.GetTasksResponse.
  * Use `create(GetTasksResponseSchema)` to create a new message.
  */
-export const GetTasksResponseSchema: GenMessage<GetTasksResponse> = /*@__PURE__*/
+export const GetTasksResponseSchema: GenMessage<GetTasksResponse> =
+  /*@__PURE__*/
   messageDesc(file_workspace_v1_task, 4);
 
 /**
  * @generated from message workspace.v1.GetFormOptionsResponse
  */
-export type GetFormOptionsResponse = Message<"workspace.v1.GetFormOptionsResponse"> & {
-  /**
-   * @generated from field: repeated workspace.v1.Priority priorities = 1;
-   */
-  priorities: Priority[];
+export type GetFormOptionsResponse =
+  Message<"workspace.v1.GetFormOptionsResponse"> & {
+    /**
+     * @generated from field: repeated workspace.v1.Priority priorities = 1;
+     */
+    priorities: Priority[];
 
-  /**
-   * @generated from field: repeated workspace.v1.Project projects = 2;
-   */
-  projects: Project[];
+    /**
+     * @generated from field: repeated workspace.v1.Project projects = 2;
+     */
+    projects: Project[];
 
-  /**
-   * @generated from field: repeated workspace.v1.Assignee assignees = 3;
-   */
-  assignees: Assignee[];
-};
+    /**
+     * @generated from field: repeated workspace.v1.Assignee assignees = 3;
+     */
+    assignees: Assignee[];
+  };
 
 /**
  * Describes the message workspace.v1.GetFormOptionsResponse.
  * Use `create(GetFormOptionsResponseSchema)` to create a new message.
  */
-export const GetFormOptionsResponseSchema: GenMessage<GetFormOptionsResponse> = /*@__PURE__*/
+export const GetFormOptionsResponseSchema: GenMessage<GetFormOptionsResponse> =
+  /*@__PURE__*/
   messageDesc(file_workspace_v1_task, 5);
 
 /**
@@ -200,7 +223,8 @@ export type CreateTaskResponse = Message<"workspace.v1.CreateTaskResponse"> & {
  * Describes the message workspace.v1.CreateTaskResponse.
  * Use `create(CreateTaskResponseSchema)` to create a new message.
  */
-export const CreateTaskResponseSchema: GenMessage<CreateTaskResponse> = /*@__PURE__*/
+export const CreateTaskResponseSchema: GenMessage<CreateTaskResponse> =
+  /*@__PURE__*/
   messageDesc(file_workspace_v1_task, 6);
 
 /**
@@ -214,7 +238,7 @@ export const TaskService: GenService<{
     methodKind: "unary";
     input: typeof GetTasksRequestSchema;
     output: typeof GetTasksResponseSchema;
-  },
+  };
   /**
    * @generated from rpc workspace.v1.TaskService.GetFormOptions
    */
@@ -222,7 +246,7 @@ export const TaskService: GenService<{
     methodKind: "unary";
     input: typeof GetFormOptionsRequestSchema;
     output: typeof GetFormOptionsResponseSchema;
-  },
+  };
   /**
    * @generated from rpc workspace.v1.TaskService.CreateTask
    */
@@ -230,7 +254,5 @@ export const TaskService: GenService<{
     methodKind: "unary";
     input: typeof CreateTaskRequestSchema;
     output: typeof CreateTaskResponseSchema;
-  },
-}> = /*@__PURE__*/
-  serviceDesc(file_workspace_v1_task, 0);
-
+  };
+}> = /*@__PURE__*/ serviceDesc(file_workspace_v1_task, 0);
