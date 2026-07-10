@@ -10,6 +10,9 @@
     "check-types": "tsc --noEmit",
     "format": "prettier --write . && eslint --fix"
   },
+  "dependencies": {
+    "zod": "^4.4.3"
+  },
   "devDependencies": {
     "@repo/typescript-config": "workspace:*",
     "typescript": "catalog:"

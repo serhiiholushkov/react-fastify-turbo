@@ -1,5 +1,10 @@
+export { assigneeSchema } from "./assignee.ts";
 export type { Assignee } from "./assignee.ts";
+export { prioritySchema } from "./priority.ts";
 export type { Priority } from "./priority.ts";
+export { projectSchema } from "./project.ts";
 export type { Project } from "./project.ts";
+export { statusSchema } from "./status.ts";
 export type { Status } from "./status.ts";
+export { taskSchema } from "./task.ts";
 export type { Task } from "./task.ts";

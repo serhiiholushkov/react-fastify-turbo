@@ -4,9 +4,16 @@ import fastifyCors from "@fastify/cors";
 import dbPlugin from "./plugins/db.plugin.js";
 import connectPlugin from "./plugins/connect.plugin.js";
 import { registerCommonHooks } from "./hooks/common.hooks.js";
+import {
+  serializerCompiler,
+  validatorCompiler,
+} from "fastify-type-provider-zod";
 
 export async function buildApp() {
   const server = fastify({ logger: false });
+
+  server.setValidatorCompiler(validatorCompiler);
+  server.setSerializerCompiler(serializerCompiler);
 
   registerCommonHooks(server);
 

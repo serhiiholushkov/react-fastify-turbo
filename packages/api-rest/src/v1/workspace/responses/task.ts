@@ -1,21 +1,30 @@
-import type { Task } from "../entities/task.ts";
-import type { Priority } from "../entities/priority.ts";
-import type { Project } from "../entities/project.ts";
-import type { Assignee } from "../entities/assignee.ts";
+import { z } from "zod";
+import { taskSchema } from "../entities/task.ts";
+import { prioritySchema } from "../entities/priority.ts";
+import { projectSchema } from "../entities/project.ts";
+import { assigneeSchema } from "../entities/assignee.ts";
 
 // GET /v1/tasks
-export interface GetTasksResponse {
-  tasks: Task[];
-}
+export const getTasksResponseSchema = z.object({
+  tasks: z.array(taskSchema),
+});
+
+export type GetTasksResponse = z.infer<typeof getTasksResponseSchema>;
 
 // GET /v1/tasks/form-options
-export interface GetFormOptionsResponse {
-  priorities: Priority[];
-  projects: Project[];
-  assignees: Assignee[];
-}
+export const getFormOptionsResponseSchema = z.object({
+  priorities: z.array(prioritySchema),
+  projects: z.array(projectSchema),
+  assignees: z.array(assigneeSchema),
+});
+
+export type GetFormOptionsResponse = z.infer<
+  typeof getFormOptionsResponseSchema
+>;
 
 // POST /v1/tasks
-export interface CreateTaskResponse {
-  task: Task;
-}
+export const createTaskResponseSchema = z.object({
+  task: taskSchema,
+});
+
+export type CreateTaskResponse = z.infer<typeof createTaskResponseSchema>;
