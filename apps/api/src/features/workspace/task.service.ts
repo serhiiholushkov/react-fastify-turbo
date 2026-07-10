@@ -11,19 +11,15 @@ import {
   priorities,
   assignees,
 } from "../../db/schema.js";
+import { notFound, internalServerError } from "../../shared/errors.js";
 
-export function createTaskServiceImpl(
-  db: Database,
-): ServiceImpl<typeof TaskService> {
+// ── Domain service ────────────────────────────────────────────────────────────
+
+export function createTaskService(db: Database) {
   return {
     async getTasks() {
       const rows = await db.query.tasks.findMany({
-        with: {
-          project: true,
-          status: true,
-          priority: true,
-          assignee: true,
-        },
+        with: { project: true, status: true, priority: true, assignee: true },
       });
 
       return {
@@ -36,7 +32,7 @@ export function createTaskServiceImpl(
           project: row.project,
           status: row.status,
           priority: row.priority,
-          assignee: row.assignee ?? undefined,
+          assignee: row.assignee ?? null,
         })),
       };
     },
@@ -55,8 +51,14 @@ export function createTaskServiceImpl(
       };
     },
 
-    async createTask(req) {
-      const { title, description, projectId, priorityId, assigneeId } = req;
+    async createTask(input: {
+      title: string;
+      description: string;
+      projectId: number;
+      priorityId: number;
+      assigneeId?: number | null;
+    }) {
+      const { title, description, projectId, priorityId, assigneeId } = input;
 
       const task = await db.transaction(async (tx) => {
         const [project, defaultStatus] = await Promise.all([
@@ -65,14 +67,11 @@ export function createTaskServiceImpl(
         ]);
 
         if (!project) {
-          throw new ConnectError(
-            `Project with id ${projectId} not found`,
-            Code.NotFound,
-          );
+          throw notFound(`Project with id ${projectId} not found`);
         }
 
         if (!defaultStatus) {
-          throw new ConnectError("Default status not found", Code.Internal);
+          throw internalServerError("Default status not found");
         }
 
         const result = await tx
@@ -90,7 +89,7 @@ export function createTaskServiceImpl(
 
         const createdId = result[0]?.id;
         if (!createdId) {
-          throw new ConnectError("Failed to create task", Code.Internal);
+          throw internalServerError("Failed to create task");
         }
 
         const slug = `${project.key}-${createdId}`;
@@ -98,12 +97,7 @@ export function createTaskServiceImpl(
 
         const full = await tx.query.tasks.findFirst({
           where: eq(tasks.id, createdId),
-          with: {
-            project: true,
-            status: true,
-            priority: true,
-            assignee: true,
-          },
+          with: { project: true, status: true, priority: true, assignee: true },
         });
 
         return full!;
@@ -119,9 +113,70 @@ export function createTaskServiceImpl(
           project: task.project,
           status: task.status,
           priority: task.priority,
-          assignee: task.assignee ?? undefined,
+          assignee: task.assignee ?? null,
         },
       };
+    },
+  };
+}
+
+// ── RPC service implementation ────────────────────────────────────────────────
+
+function toConnectError(err: unknown): ConnectError {
+  if (err instanceof ConnectError) return err;
+  if (err instanceof Error && "statusCode" in err) {
+    const { statusCode } = err as { statusCode: number };
+    if (statusCode === 404) return new ConnectError(err.message, Code.NotFound);
+    if (statusCode === 500) return new ConnectError(err.message, Code.Internal);
+  }
+  return new ConnectError("Internal server error", Code.Internal);
+}
+
+export function createTaskServiceImpl(
+  db: Database,
+): ServiceImpl<typeof TaskService> {
+  const svc = createTaskService(db);
+  return {
+    async getTasks() {
+      try {
+        const result = await svc.getTasks();
+        return {
+          tasks: result.tasks.map((t) => ({
+            ...t,
+            assignee: t.assignee ?? undefined,
+          })),
+        };
+      } catch (err) {
+        throw toConnectError(err);
+      }
+    },
+
+    async getFormOptions() {
+      try {
+        return await svc.getFormOptions();
+      } catch (err) {
+        throw toConnectError(err);
+      }
+    },
+
+    async createTask(req) {
+      try {
+        const result = await svc.createTask({
+          title: req.title,
+          description: req.description,
+          projectId: req.projectId,
+          priorityId: req.priorityId,
+          assigneeId: req.assigneeId,
+        });
+        return {
+          task: {
+            ...result.task,
+            assignee: result.task.assignee ?? undefined,
+          },
+        };
+      } catch (err) {
+        throw toConnectError(err);
+      }
     },
   };
 }

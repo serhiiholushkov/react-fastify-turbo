@@ -1,8 +1,8 @@
 import { z } from "zod";
-import { assigneeSchema } from "./assignee.ts";
-import { prioritySchema } from "./priority.ts";
-import { projectSchema } from "./project.ts";
-import { statusSchema } from "./status.ts";
+import { assigneeSchema } from "./assignee.js";
+import { prioritySchema } from "./priority.js";
+import { projectSchema } from "./project.js";
+import { statusSchema } from "./status.js";
 
 export const taskSchema = z.object({
   id: z.number().int().positive(),

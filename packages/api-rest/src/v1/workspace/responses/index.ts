@@ -2,7 +2,7 @@ export {
   getTasksResponseSchema,
   getFormOptionsResponseSchema,
   createTaskResponseSchema,
-} from "./task.ts";
+} from "./task.js";
 export type {
   GetTasksResponse,
   GetFormOptionsResponse,

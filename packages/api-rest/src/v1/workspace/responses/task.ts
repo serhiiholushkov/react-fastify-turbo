@@ -1,8 +1,8 @@
 import { z } from "zod";
-import { taskSchema } from "../entities/task.ts";
-import { prioritySchema } from "../entities/priority.ts";
-import { projectSchema } from "../entities/project.ts";
-import { assigneeSchema } from "../entities/assignee.ts";
+import { taskSchema } from "../entities/task.js";
+import { prioritySchema } from "../entities/priority.js";
+import { projectSchema } from "../entities/project.js";
+import { assigneeSchema } from "../entities/assignee.js";
 
 // GET /v1/tasks
 export const getTasksResponseSchema = z.object({

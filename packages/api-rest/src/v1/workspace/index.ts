@@ -4,21 +4,21 @@ export {
   projectSchema,
   statusSchema,
   taskSchema,
-} from "./entities/index.ts";
+} from "./entities/index.js";
 export type {
   Assignee,
   Priority,
   Project,
   Status,
   Task,
-} from "./entities/index.ts";
-export { createTaskSchema } from "./requests/index.ts";
+} from "./entities/index.js";
+export { createTaskSchema } from "./requests/index.js";
 export type { CreateTaskRequest } from "./requests/index.ts";
 export {
   getTasksResponseSchema,
   getFormOptionsResponseSchema,
   createTaskResponseSchema,
-} from "./responses/index.ts";
+} from "./responses/index.js";
 export type {
   GetTasksResponse,
   GetFormOptionsResponse,
