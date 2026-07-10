@@ -113,6 +113,9 @@ importers:
       '@connectrpc/connect-fastify':
         specifier: ^2.1.2
         version: 2.1.2(@bufbuild/protobuf@2.12.0)(@connectrpc/connect-node@2.1.2(@bufbuild/protobuf@2.12.0)(@connectrpc/connect@2.1.2(@bufbuild/protobuf@2.12.0)))(@connectrpc/connect@2.1.2(@bufbuild/protobuf@2.12.0))(fastify@5.8.5)
+      '@connectrpc/validate':
+        specifier: ^0.2.0
+        version: 0.2.0(@bufbuild/protobuf@2.12.0)(@bufbuild/protovalidate@1.2.0(@bufbuild/protobuf@2.12.0))(@connectrpc/connect@2.1.2(@bufbuild/protobuf@2.12.0))
       '@fastify/autoload':
         specifier: ^6.3.1
         version: 6.3.1
@@ -593,6 +596,16 @@ packages:
     engines: {node: '>=12'}
     hasBin: true
 
+  '@bufbuild/cel-spec@0.4.0':
+    resolution: {integrity: sha512-dUS6f2fNt6KEumsYGE7YFxERZE5ZuyME1hQmGjtO8tkZhR6ow6/ne3v4Gik9cfdb9lSLK3AJ+vDxCdGWmDbWvA==}
+    peerDependencies:
+      '@bufbuild/protobuf': ^2.6.2
+
+  '@bufbuild/cel@0.4.0':
+    resolution: {integrity: sha512-CdW/JgiTJCYXqnwuaJRo7NcoYhR37AaF58MMiog0/t8nudn86ZyLXYaA1f2yGhm2U17h8pKGZNksTHVSTcpmAw==}
+    peerDependencies:
+      '@bufbuild/protobuf': ^2.6.2
+
   '@bufbuild/protobuf@1.10.1':
     resolution: {integrity: sha512-wJ8ReQbHxsAfXhrf9ixl0aYbZorRuOWpBNzm8pL8ftmSxQx/wnJD5Eg861NwJU/czy2VXFIebCeZnZrI9rktIQ==}
 
@@ -614,6 +627,11 @@ packages:
 
   '@bufbuild/protoplugin@2.12.0':
     resolution: {integrity: sha512-ORlDITp8AFUXzIhLRoMCG+ud+D3MPKWb5HQXBoskMMnjeyEjE1H1qLonVNPyOr8lkx3xSfYUo8a0dvOZJVAzow==}
+
+  '@bufbuild/protovalidate@1.2.0':
+    resolution: {integrity: sha512-tD08DwGrHIV88khLz1Kdz9DYUwEo1TsoepaIg7/B/zd//AymaTx67kvCS1jlkcG/+vgQaSOl6f0HCE3sL8vI7w==}
+    peerDependencies:
+      '@bufbuild/protobuf': ^2.8.0
 
   '@clerk/clerk-react@5.61.3':
     resolution: {integrity: sha512-W21aNEeHtqh3xJLuW5g2ydben/1D5pSnxsl/kCnv0IY1zma7lO+aIJ7Br2bR4FKKkiu695mPnjtY+fvkQmCXBg==}
@@ -674,6 +692,13 @@ packages:
         optional: true
       '@connectrpc/connect':
         optional: true
+
+  '@connectrpc/validate@0.2.0':
+    resolution: {integrity: sha512-u1hdyt1WaFkKpuT/3J2wYlCjYLkYHMZamoatgxTIsV5Q8H9fO2px3zecmb0Q47YDjkZqnX6z0PAEstK+dNYiEQ==}
+    peerDependencies:
+      '@bufbuild/protobuf': ^2.9.0
+      '@bufbuild/protovalidate': ^1.0.0
+      '@connectrpc/connect': ^2.0.3
 
   '@csstools/color-helpers@6.0.2':
     resolution: {integrity: sha512-LMGQLS9EuADloEFkcTBR3BwV/CGHV7zyDxVRtVDTwdI2Ca4it0CCVTT9wCkxSgokjE5Ho41hEPgb8OEUwoXr6Q==}
@@ -5448,6 +5473,15 @@ snapshots:
       '@bufbuild/buf-win32-arm64': 1.71.0
       '@bufbuild/buf-win32-x64': 1.71.0
 
+  '@bufbuild/cel-spec@0.4.0(@bufbuild/protobuf@2.12.0)':
+    dependencies:
+      '@bufbuild/protobuf': 2.12.0
+
+  '@bufbuild/cel@0.4.0(@bufbuild/protobuf@2.12.0)':
+    dependencies:
+      '@bufbuild/cel-spec': 0.4.0(@bufbuild/protobuf@2.12.0)
+      '@bufbuild/protobuf': 2.12.0
+
   '@bufbuild/protobuf@1.10.1': {}
 
   '@bufbuild/protobuf@2.12.0': {}
@@ -5475,6 +5509,11 @@ snapshots:
       typescript: 5.4.5
     transitivePeerDependencies:
       - supports-color
+
+  '@bufbuild/protovalidate@1.2.0(@bufbuild/protobuf@2.12.0)':
+    dependencies:
+      '@bufbuild/cel': 0.4.0(@bufbuild/protobuf@2.12.0)
+      '@bufbuild/protobuf': 2.12.0
 
   '@clerk/clerk-react@5.61.3(react-dom@19.2.6(react@19.2.6))(react@19.2.6)':
     dependencies:
@@ -5525,6 +5564,12 @@ snapshots:
       '@connectrpc/connect': 2.1.2(@bufbuild/protobuf@2.12.0)
     transitivePeerDependencies:
       - supports-color
+
+  '@connectrpc/validate@0.2.0(@bufbuild/protobuf@2.12.0)(@bufbuild/protovalidate@1.2.0(@bufbuild/protobuf@2.12.0))(@connectrpc/connect@2.1.2(@bufbuild/protobuf@2.12.0))':
+    dependencies:
+      '@bufbuild/protobuf': 2.12.0
+      '@bufbuild/protovalidate': 1.2.0(@bufbuild/protobuf@2.12.0)
+      '@connectrpc/connect': 2.1.2(@bufbuild/protobuf@2.12.0)
 
   '@csstools/color-helpers@6.0.2': {}
 
