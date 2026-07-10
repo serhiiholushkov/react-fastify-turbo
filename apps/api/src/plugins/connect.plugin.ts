@@ -20,3 +20,21 @@ export default fp(connectPlugin, {
   dependencies: ["db-plugin"],
   fastify: "5.x",
 });
+
+// The following is an example of a custom validation interceptor
+// import type { Interceptor } from "@connectrpc/connect";
+// import { ConnectError, Code } from "@connectrpc/connect";
+// import { CreateTaskRequest } from "@repo/api-rpc";
+
+// export const customValidationInterceptor: Interceptor = (next) => (req) => {
+//   if (!req.stream && req.method.name === "CreateTask") {
+//     const msg = req.message as CreateTaskRequest;
+//     if (msg.title.trim().length === 0) {
+//       throw new ConnectError("Title cannot be blank", Code.InvalidArgument);
+//     }
+//   }
+//   return next(req);
+// };
+//
+// Then use it
+// interceptors: [createValidateInterceptor(), customValidationInterceptor],
