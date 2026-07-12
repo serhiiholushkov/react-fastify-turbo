@@ -13,6 +13,8 @@ import {
 } from "../../db/schema.js";
 import { notFound, internalServerError } from "../../shared/errors.js";
 
+export type TaskDomainService = ReturnType<typeof createTaskService>;
+
 // ── Domain service ────────────────────────────────────────────────────────────
 
 export function createTaskService(db: Database) {
@@ -133,9 +135,8 @@ function toConnectError(err: unknown): ConnectError {
 }
 
 export function createTaskServiceImpl(
-  db: Database,
+  svc: TaskDomainService,
 ): ServiceImpl<typeof TaskService> {
-  const svc = createTaskService(db);
   return {
     async getTasks() {
       try {

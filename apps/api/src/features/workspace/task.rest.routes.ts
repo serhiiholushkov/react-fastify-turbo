@@ -7,7 +7,7 @@ import {
   getFormOptionsResponseSchema,
   createTaskResponseSchema,
 } from "@repo/api-rest";
-import { createTaskService } from "./task.service.js";
+import type { TaskDomainService } from "./task.service.js";
 
 const errorSchema = z.object({
   statusCode: z.number(),
@@ -15,9 +15,11 @@ const errorSchema = z.object({
   message: z.string(),
 });
 
-export function registerTaskRestRoutes(fastify: FastifyInstance) {
+export function registerTaskRestRoutes(
+  fastify: FastifyInstance,
+  svc: TaskDomainService,
+) {
   const f = fastify.withTypeProvider<ZodTypeProvider>();
-  const svc = createTaskService(fastify.db);
 
   // GET /v1/tasks
   f.get(
