@@ -1,7 +1,7 @@
 {
   "$schema": "https://turborepo.dev/schema.json",
   "ui": "tui",
-  "globalEnv": ["DEV"],
+  "globalEnv": ["DEV", "DATABASE_URL", "NODE_ENV", "CORS_ORIGIN"],
   "tasks": {
     "generate": {
       "outputs": ["src/gen/**"]
