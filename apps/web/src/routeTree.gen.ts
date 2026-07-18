@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as TasksRouteImport } from './routes/tasks'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as TestsMemosRouteImport } from './routes/tests/memos'
 
 const TasksRoute = TasksRouteImport.update({
   id: '/tasks',
@@ -22,31 +23,40 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const TestsMemosRoute = TestsMemosRouteImport.update({
+  id: '/tests/memos',
+  path: '/tests/memos',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/tasks': typeof TasksRoute
+  '/tests/memos': typeof TestsMemosRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/tasks': typeof TasksRoute
+  '/tests/memos': typeof TestsMemosRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/tasks': typeof TasksRoute
+  '/tests/memos': typeof TestsMemosRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/tasks'
+  fullPaths: '/' | '/tasks' | '/tests/memos'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/tasks'
-  id: '__root__' | '/' | '/tasks'
+  to: '/' | '/tasks' | '/tests/memos'
+  id: '__root__' | '/' | '/tasks' | '/tests/memos'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   TasksRoute: typeof TasksRoute
+  TestsMemosRoute: typeof TestsMemosRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -65,12 +75,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/tests/memos': {
+      id: '/tests/memos'
+      path: '/tests/memos'
+      fullPath: '/tests/memos'
+      preLoaderRoute: typeof TestsMemosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   TasksRoute: TasksRoute,
+  TestsMemosRoute: TestsMemosRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

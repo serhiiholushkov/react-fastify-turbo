@@ -1,5 +1,5 @@
 import type { PropsWithChildren } from 'react'
-import { HomeIcon, ListTodoIcon } from 'lucide-react'
+import { HomeIcon, ListTodoIcon, TestTubesIcon } from 'lucide-react'
 import { SidebarInset, SidebarProvider } from '@repo/ui/components/sidebar'
 import { AppSidebar } from '../nav/app-sidebar'
 import type { NavItem } from '../nav/app-sidebar'
@@ -8,6 +8,11 @@ import { Header } from './header'
 const NAV_ITEMS: NavItem[] = [
   { label: 'Home', to: '/', icon: HomeIcon },
   { label: 'Tasks', to: '/tasks', icon: ListTodoIcon },
+  {
+    label: 'Tests',
+    to: '#',
+    items: [{ label: 'Memos', to: '/tests/memos', icon: TestTubesIcon }],
+  },
 ]
 
 type Props = PropsWithChildren
