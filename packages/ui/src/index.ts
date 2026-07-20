@@ -14,6 +14,7 @@ export * from "./components/sidebar";
 export * from "./components/skeleton";
 export * from "./components/textarea";
 export * from "./components/tooltip";
+export * from "./components/field";
 
 // Hooks
 export * from "./hooks/use-mobile";
